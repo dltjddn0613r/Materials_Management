@@ -1,0 +1,8 @@
+<Context>
+    <Resource name="jdbc/Materials_Management" auth="Container"
+              type="javax.sql.DataSource"
+              maxActive="100" maxIdle="30" maxWait="10000"
+              username="system" password="1234"
+              driverClassName="oracle.jdbc.driver.OracleDriver"
+              url="jdbc:oracle:thin:@localhost:1521:XE"/>
+</Context>

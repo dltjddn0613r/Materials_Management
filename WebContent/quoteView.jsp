@@ -1,10 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
+<%@ page import="java.util.List" %>
+<%@ page import="mvc.model.Quote" %>
+
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="EUC-KR">
     <title>견적서 조회</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
             display: flex;
@@ -131,6 +134,7 @@
             <table class="table table-bordered">
                 <thead>
                     <tr>
+                        <th><input type="checkbox" id="checkAll"></th>
                         <th>일자</th>
                         <th>No.</th>
                         <th>거래처명</th>
@@ -143,24 +147,48 @@
                         <th>인쇄</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>2024-07-15</td>
-                        <td>001</td>
-                        <td>ABC Corp</td>
-                        <td>John Doe</td>
-                        <td>Item A</td>
-                        <td>2024-08-15</td>
-                        <td>1000.00</td>
-                        <td>진행 중</td>
-                        <td>Voucher 1</td>
-                        <td><button class="btn btn-secondary">인쇄</button></td>
-                    </tr>
-                    <!-- 추가 데이터 행 -->
-                </tbody>
+              <tbody>
+    <%
+        List<Quote> quotes = (List<Quote>) request.getAttribute("quotes");
+        if (quotes != null && !quotes.isEmpty()) { // quotes가 null이 아니고 비어있지 않은 경우
+            for (Quote quote : quotes) {
+    %>
+                <tr>
+                            <td><input type="checkbox" class="rowCheck"></td>
+                            <td>${quote.date}</td>
+                            <td>${quote.id}</td>
+                            <td>${quote.clientName}</td>
+                            <td>${quote.clientName}</td>
+                            <td>${quote.itemName}</td>
+                            <td>${quote.date}</td>
+                            <td>${quote.totalAmount}</td>
+                            <td>${quote.status}</td>
+                            <td>생성한 전표</td>
+                            <td><button class="btn btn-secondary">인쇄</button></td>
+                        </tr>
+
+    <%
+            }
+        } else {
+    %>
+            <tr>
+                <td colspan="11" class="text-center">견적서가 없습니다.</td>
+            </tr>
+    <%
+        }
+    %>
+</tbody>
             </table>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('checkAll').addEventListener('click', function() {
+            var checkboxes = document.querySelectorAll('.rowCheck');
+            for (var checkbox of checkboxes) {
+                checkbox.checked = this.checked;
+            }
+        });
+    </script>
 </body>
 </html>

@@ -1,10 +1,12 @@
-package model;
+package mvc.model;
 import javax.servlet.*;
 import javax.servlet.http.*;
+
+import mvc.model.Order;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import model.Order;
 
 public class OrderServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

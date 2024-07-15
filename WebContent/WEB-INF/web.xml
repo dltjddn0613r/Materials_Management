@@ -1,9 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
-  
- 
-	
-	<welcome-file-list>
-	<welcome-file>index.jsp</welcome-file>
-	</welcome-file-list>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+    id="WebApp_ID" version="3.0">
+
+    <context-param>
+        <param-name>poolConfig</param-name>
+        <param-value>
+            jdbcdriver=oracle.jdbc.driver.OracleDriver
+            jdbcUrl=jdbc:oracle:thin:@localhost:1521:XE
+            dbUser=system
+            dbPass=1234
+            validationQuery=select 1
+            minIdle=3
+            maxTotal=30
+            poolName=Materials_Management
+        </param-value>
+    </context-param>
+
+    <servlet>
+        <servlet-name>QuoteServlet</servlet-name>
+        <servlet-class>mvc.model.QuoteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>QuoteServlet</servlet-name>
+        <url-pattern>/quoteView</url-pattern>
+    </servlet-mapping>
+
+    <filter>
+        <filter-name>encodingFilter</filter-name>
+        <filter-class>util.CharacterEncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>utf-8</param-value>
+        </init-param>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>encodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <resource-ref>
+        <description>DB Connection</description>
+        <res-ref-name>jdbc/Materials_Management</res-ref-name>
+        <res-type>javax.sql.DataSource</res-type>
+        <res-auth>Container</res-auth>
+    </resource-ref>
 </web-app>

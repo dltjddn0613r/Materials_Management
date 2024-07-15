@@ -131,6 +131,7 @@
             <table class="table table-bordered">
                 <thead>
                     <tr>
+                        <th><input type="checkbox" id="checkAll"></th>
                         <th>일자</th>
                         <th>No.</th>
                         <th>거래처명</th>
@@ -145,6 +146,7 @@
                 </thead>
                 <tbody>
                     <tr>
+                        <td><input type="checkbox" class="rowCheck"></td>
                         <td>2024-07-15</td>
                         <td>001</td>
                         <td>XYZ Ltd.</td>
@@ -162,5 +164,13 @@
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        document.getElementById('checkAll').addEventListener('click', function() {
+            var checkboxes = document.querySelectorAll('.rowCheck');
+            for (var checkbox of checkboxes) {
+                checkbox.checked = this.checked;
+            }
+        });
+    </script>
 </body>
 </html>
