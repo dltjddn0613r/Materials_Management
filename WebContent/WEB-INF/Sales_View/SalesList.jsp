@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Insert title here</title>
+<title>판매 조회</title>
 </head>
 <body>
-test 입니다.test
+
 </body>
 </html>
