@@ -22,7 +22,7 @@ public class QuoteServlet extends HttpServlet {
             Context initContext = new InitialContext();
             Context envContext = (Context) initContext.lookup("java:/comp/env");
             dataSource = (DataSource) envContext.lookup("jdbc/Materials_Management");
-            quoteDAO = new QuoteDAO(dataSource); // DataSource로 QuoteDAO 초기화
+            quoteDAO = new QuoteDAO(dataSource); // DataSource로 QuoteDAO 초기화 ㅎ
         } catch (NamingException e) {
             throw new ServletException("Cannot retrieve java:/comp/env/jdbc/Materials_Management", e);
         }
