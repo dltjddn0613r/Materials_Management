@@ -23,7 +23,7 @@ public class QuoteDAO {
         	
             while (rs.next()) {
                 Quote quote = new Quote();
-                quote.setQuoteID(rs.getInt("QuoteID"));
+                quote.setQuoteID(rs.getString("QuoteID"));
                 quote.setQuoteDate(rs.getDate("QuoteDate"));
                 quote.setQuoteNumber(rs.getString("QuoteNumber"));
                 quote.setCustomerCode(rs.getString("CustomerCode"));
@@ -43,27 +43,56 @@ public class QuoteDAO {
         return quotes;
     }
 
-    public int insertQuote(Quote quote) throws SQLException {
-        String sql = "INSERT INTO Quotes (QuoteDate, CustomerCode, EmployeeCode, ProductCode, ValidityPeriod, TotalAmount, Status) VALUES (?, ?, ?, ?, ?, ?, ?)";
-        
-        try (Connection conn = ConnectionProvider.getConnection();
-             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+	 public int insertQuote(Quote quote) throws SQLException {
+	        String sqlQuote = "INSERT INTO Quotes (QuoteDate, QuoteNumber, CustomerCode, EmployeeCode, ProductCode, ValidityPeriod, TotalAmount, Status) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+	        String sqlCustomer = "INSERT INTO Customers (CustomerCode, CustomerName) SELECT ?, ? FROM dual WHERE NOT EXISTS (SELECT 1 FROM Customers WHERE CustomerCode = ?)";
+	        String sqlEmployee = "INSERT INTO Employees (EmployeeCode, EmployeeName) SELECT ?, ? FROM dual WHERE NOT EXISTS (SELECT 1 FROM Employees WHERE EmployeeCode = ?)";
+	        String sqlProduct = "INSERT INTO Products (ProductCode, ProductName, Price) SELECT ?, ?, ? FROM dual WHERE NOT EXISTS (SELECT 1 FROM Products WHERE ProductCode = ?)";
 
-            pstmt.setDate(1, quote.getQuoteDate());
-            pstmt.setString(2, quote.getCustomerCode());
-            pstmt.setString(3, quote.getEmployeeCode());
-            pstmt.setString(4, quote.getProductCode());
-            pstmt.setDate(5, quote.getValidityPeriod());
-            pstmt.setDouble(6, quote.getTotalAmount());
-            pstmt.setString(7, quote.getStatus());
+	        try (Connection conn = ConnectionProvider.getConnection()) {
+	            conn.setAutoCommit(false);
+	            try (PreparedStatement pstmtQuote = conn.prepareStatement(sqlQuote);
+	                 PreparedStatement pstmtCustomer = conn.prepareStatement(sqlCustomer);
+	                 PreparedStatement pstmtEmployee = conn.prepareStatement(sqlEmployee);
+	                 PreparedStatement pstmtProduct = conn.prepareStatement(sqlProduct)) {
 
-            int result = pstmt.executeUpdate();
-            System.out.println("삽입된 행 수: " + result);  // 디버깅 메시지 추가
-            return result;
-            
-        } catch (SQLException e) {
-            e.printStackTrace();
-            throw e;
-        }
-    }
-}
+	                // Insert Quote
+	                pstmtQuote.setDate(1, quote.getQuoteDate());
+	                pstmtQuote.setString(2, quote.getQuoteNumber());
+	                pstmtQuote.setString(3, quote.getCustomerCode());
+	                pstmtQuote.setString(4, quote.getEmployeeCode());
+	                pstmtQuote.setString(5, quote.getProductCode());
+	                pstmtQuote.setDate(6, quote.getValidityPeriod());
+	                pstmtQuote.setDouble(7, quote.getTotalAmount());
+	                pstmtQuote.setString(8, quote.getStatus());
+	                pstmtQuote.executeUpdate();
+
+	                // Insert Customer if not exists
+	                pstmtCustomer.setString(1, quote.getCustomerCode());
+	                pstmtCustomer.setString(2, "New Customer");
+	                pstmtCustomer.setString(3, quote.getCustomerCode());
+	                pstmtCustomer.executeUpdate();
+
+	                // Insert Employee if not exists
+	                pstmtEmployee.setString(1, quote.getEmployeeCode());
+	                pstmtEmployee.setString(2, "New Employee");
+	                pstmtEmployee.setString(3, quote.getEmployeeCode());
+	                pstmtEmployee.executeUpdate();
+
+	                // Insert Product if not exists
+	                pstmtProduct.setString(1, quote.getProductCode());
+	                pstmtProduct.setString(2, "New Product");
+	                pstmtProduct.setDouble(3, 0.0);
+	                pstmtProduct.setString(4, quote.getProductCode());
+	                pstmtProduct.executeUpdate();
+
+	                conn.commit();
+	                return 1;
+	            } catch (SQLException e) {
+	                conn.rollback();
+	                e.printStackTrace();
+	                throw e;
+	            }
+	        }
+	    }
+	}

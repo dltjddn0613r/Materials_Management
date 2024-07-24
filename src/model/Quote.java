@@ -3,23 +3,23 @@ package model;
 import java.sql.Date;
 
 public class Quote {
-    private int quoteID;
+    private String quoteID;
     private Date quoteDate;
-    private String quoteNumber; // 사용하지 않더라도 필드 유지
+    private String quoteNumber;
     private String customerCode;
     private String employeeCode;
     private String productCode;
     private Date validityPeriod;
     private double totalAmount;
     private String status;
-    private String createdVoucher; // 사용하지 않더라도 필드 유지
+    private String createdVoucher;
 
     // Getters and Setters
-    public int getQuoteID() {
+    public String getQuoteID() {
         return quoteID;
     }
 
-    public void setQuoteID(int quoteID) {
+    public void setQuoteID(String quoteID) {
         this.quoteID = quoteID;
     }
 
