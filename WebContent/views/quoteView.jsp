@@ -58,8 +58,8 @@
                 </h2>
                 <div id="quoteAccordion" class="accordion-collapse collapse show">
                     <div class="accordion-body">
-                        <a href="quoteView.jsp" class="clickable-item">견적서 조회</a>
-                        <a href="quoteInput.jsp" class="clickable-item">견적서 입력</a>
+                        <a href="${pageContext.request.contextPath}/quoteView" class="clickable-item">견적서 조회</a>
+                        <a href="${pageContext.request.contextPath}/quoteInput"class="clickable-item">견적서 입력</a>
                         <a href="quoteStatus.jsp" class="clickable-item">견적서 현황</a>
                         <a href="unorderedStatus.jsp" class="clickable-item">미주문 현황</a>
                     </div>
@@ -138,6 +138,8 @@
         <div class="d-inline">
             <input type="text" class="form-control d-inline" style="width: 200px;" placeholder="검색창." aria-label="Search">
             <button class="btn btn-primary">검색</button>
+             <a href="${pageContext.request.contextPath}/quoteInput" class="btn btn-success">신규</a> <!-- 신규 버튼 추가 -->
+             
         </div>
         <div class="mt-3">
             <table class="table table-bordered">
