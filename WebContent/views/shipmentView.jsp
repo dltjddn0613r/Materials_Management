@@ -134,7 +134,7 @@
         </div>
     </div>
     <div class="main-content">
-        <h2 class="d-inline">견적서 조회</h2>
+        <h2 class="d-inline">출하 조회</h2>
         <div class="d-inline">
             <input type="text" class="form-control d-inline" style="width: 200px;" placeholder="검색창." aria-label="Search">
             <button class="btn btn-primary">검색</button>
@@ -148,12 +148,12 @@
                         <th><input type="checkbox" id="checkAll" aria-label="전체 선택"></th>
                         <th>일자</th>
                         <th>거래처명</th>
-                        <th>담당자명</th>
+                        <th>창고명</th>
                         <th>품목명</th>
-                        <th>유효기간</th>
-                        <th>견적금액합계</th>
-                        <th>진행상태</th>
-                        <th>생성한 전표</th>
+                        <th>수량합계</th>
+                      
+                        <th>거래처명</th>
+                        
                         <th>인쇄</th>
                     </tr>
                 </thead>
@@ -177,7 +177,7 @@
                         </c:when>
                         <c:otherwise>
                             <tr>
-                                <td colspan="10" class="text-center">견적서가 없습니다.</td>
+                                <td colspan="10" class="text-center">출하 데이터가 없습니다.</td>
                             </tr>
                         </c:otherwise>
                     </c:choose>

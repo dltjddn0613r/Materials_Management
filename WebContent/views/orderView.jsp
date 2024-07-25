@@ -134,11 +134,11 @@
         </div>
     </div>
     <div class="main-content">
-        <h2 class="d-inline">견적서 조회</h2>
+        <h2 class="d-inline">주문서 조회</h2>
         <div class="d-inline">
             <input type="text" class="form-control d-inline" style="width: 200px;" placeholder="검색창." aria-label="Search">
             <button class="btn btn-primary">검색</button>
-             <a href="${pageContext.request.contextPath}/quoteInput" class="btn btn-success">신규</a> <!-- 신규 버튼 추가 -->
+             <a href="${pageContext.request.contextPath}/orderInput" class="btn btn-success">신규</a> <!-- 신규 버튼 추가 -->
              
         </div>
         <div class="mt-3">
@@ -150,8 +150,8 @@
                         <th>거래처명</th>
                         <th>담당자명</th>
                         <th>품목명</th>
-                        <th>유효기간</th>
-                        <th>견적금액합계</th>
+                        <th>납기일자</th>
+                        <th>주문금액합계</th>
                         <th>진행상태</th>
                         <th>생성한 전표</th>
                         <th>인쇄</th>
@@ -177,7 +177,7 @@
                         </c:when>
                         <c:otherwise>
                             <tr>
-                                <td colspan="10" class="text-center">견적서가 없습니다.</td>
+                                <td colspan="10" class="text-center">주문서가 없습니다.</td>
                             </tr>
                         </c:otherwise>
                     </c:choose>

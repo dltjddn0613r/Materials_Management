@@ -133,60 +133,69 @@
             </div>
         </div>
     </div>
-    <div class="main-content">
-        <h2 class="d-inline">견적서 조회</h2>
-        <div class="d-inline">
-            <input type="text" class="form-control d-inline" style="width: 200px;" placeholder="검색창." aria-label="Search">
-            <button class="btn btn-primary">검색</button>
-             <a href="${pageContext.request.contextPath}/quoteInput" class="btn btn-success">신규</a> <!-- 신규 버튼 추가 -->
-             
-        </div>
-        <div class="mt-3">
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th><input type="checkbox" id="checkAll" aria-label="전체 선택"></th>
-                        <th>일자</th>
-                        <th>거래처명</th>
-                        <th>담당자명</th>
-                        <th>품목명</th>
-                        <th>유효기간</th>
-                        <th>견적금액합계</th>
-                        <th>진행상태</th>
-                        <th>생성한 전표</th>
-                        <th>인쇄</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <c:choose>
-                        <c:when test="${not empty quotes}">
-                            <c:forEach var="quote" items="${quotes}">
-                                <tr>
-                                    <td><input type="checkbox" class="rowCheck" aria-label="선택"></td>
-                                    <td>${quote.quoteDate}</td>
-                                    <td>${quote.customerCode}</td>
-                                    <td>${quote.employeeCode}</td>
-                                    <td>${quote.productCode}</td>
-                                    <td>${quote.validityPeriod}</td>
-                                    <td>${quote.totalAmount}</td>
-                                    <td>${quote.status}</td>
-                                    <td>${quote.createdVoucher}</td>
-                                    <td><button class="btn btn-secondary">인쇄</button></td>
-                                </tr>
-                            </c:forEach>
-                        </c:when>
-                        <c:otherwise>
-                            <tr>
-                                <td colspan="10" class="text-center">견적서가 없습니다.</td>
-                            </tr>
-                        </c:otherwise>
-                    </c:choose>
-                </tbody>
-            </table>
-        </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
+	<div class="main-content">
+		<h2 class="d-inline">판매 조회</h2>
+		<div class="d-inline">
+			<input type="text" class="form-control d-inline"
+				style="width: 200px;" placeholder="검색창." aria-label="Search">
+			<button class="btn btn-primary">검색</button>
+			<a href="${pageContext.request.contextPath}/salesInput"
+				class="btn btn-success">신규</a>
+			<!-- 신규 버튼 추가 -->
+
+		</div>
+		<div class="mt-3">
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th><input type="checkbox" id="checkAll" aria-label="전체 선택"></th>
+						<th>일자</th>
+						<th>거래처명</th>
+						<th>거래처명</th>
+						<th>품목명</th>
+						<th>납기일자</th>
+						<th>금액합계</th>
+						<th>거래유형명</th>
+						<th>출하창고명</th>
+						<th>회계반영여부</th>
+						<th>인쇄</th>
+						<th>불러온전표</th>
+					</tr>
+				</thead>
+				<tbody>
+					<c:choose>
+						<c:when test="${not empty quotes}">
+							<c:forEach var="quote" items="${quotes}">
+								<tr>
+									<td><input type="checkbox" class="rowCheck"
+										aria-label="선택"></td>
+									<td>${quote.quoteDate}</td>
+									<td>${quote.customerCode}</td>
+									<td>${quote.employeeCode}</td>
+									<td>${quote.productCode}</td>
+									<td>${quote.validityPeriod}</td>
+									<td>${quote.totalAmount}</td>
+									<td>${quote.status}</td>
+									<td>${quote.status}</td>
+									<td>${quote.status}</td>
+									<td>${quote.createdVoucher}</td>
+									<td><button class="btn btn-secondary">인쇄</button></td>
+								</tr>
+							</c:forEach>
+						</c:when>
+						<c:otherwise>
+							<tr>
+								<td colspan="12" class="text-center">판매 데이터가 없습니다.</td>
+							</tr>
+						</c:otherwise>
+					</c:choose>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+	<script>
         document.getElementById('checkAll').addEventListener('click', function() {
             var checkboxes = document.querySelectorAll('.rowCheck');
             for (var checkbox of checkboxes) {

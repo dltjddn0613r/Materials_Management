@@ -134,7 +134,7 @@
         </div>
     </div>
     <div class="main-content">
-        <h2 class="d-inline">견적서 조회</h2>
+        <h2 class="d-inline">결제내역 조회</h2>
         <div class="d-inline">
             <input type="text" class="form-control d-inline" style="width: 200px;" placeholder="검색창." aria-label="Search">
             <button class="btn btn-primary">검색</button>
@@ -146,15 +146,20 @@
                 <thead>
                     <tr>
                         <th><input type="checkbox" id="checkAll" aria-label="전체 선택"></th>
-                        <th>일자</th>
-                        <th>거래처명</th>
-                        <th>담당자명</th>
-                        <th>품목명</th>
-                        <th>유효기간</th>
-                        <th>견적금액합계</th>
-                        <th>진행상태</th>
-                        <th>생성한 전표</th>
-                        <th>인쇄</th>
+                        <th>결제요청일시</th>
+                        <th>결제요청자ID</th>
+                        <th>거래처</th>
+                        <th>품목</th>
+                        <th>결제금액</th>
+                        <th>결제방법</th>
+                        <th>결제상태</th>
+                        <th>승인번호</th>
+                        <th>재고전표</th>
+                        <th>상태별처리기능</th>
+                        <th>회계전표</th>
+                        <th>내역</th>
+                        <th>영수증인쇄</th>
+                        
                     </tr>
                 </thead>
                 <tbody>
@@ -177,7 +182,7 @@
                         </c:when>
                         <c:otherwise>
                             <tr>
-                                <td colspan="10" class="text-center">견적서가 없습니다.</td>
+                                <td colspan="15" class="text-center">데이터가 없습니다.</td>
                             </tr>
                         </c:otherwise>
                     </c:choose>
