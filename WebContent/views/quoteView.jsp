@@ -60,8 +60,8 @@
                     <div class="accordion-body">
                         <a href="${pageContext.request.contextPath}/quoteView" class="clickable-item">견적서 조회</a>
                         <a href="${pageContext.request.contextPath}/quoteInput"class="clickable-item">견적서 입력</a>
-                        <a href="quoteStatus.jsp" class="clickable-item">견적서 현황</a>
-                        <a href="unorderedStatus.jsp" class="clickable-item">미주문 현황</a>
+                        <a href="${pageContext.request.contextPath}/quoteStatus" class="clickable-item">견적서 현황</a>
+                        <a href="${pageContext.request.contextPath}/unorderedStatus" class="clickable-item">미주문 현황</a>
                     </div>
                 </div>
             </div>
