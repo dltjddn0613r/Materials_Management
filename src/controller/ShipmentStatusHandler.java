@@ -7,9 +7,9 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * QuoteInputHandler 클래스는 견적서 입력 폼을 처리하는 핸들러입니다.
  */
-public class unorderedStatusHandler implements CommandHandler {
+public class ShipmentStatusHandler implements CommandHandler {
 
-    private static final String INPUT_PAGE = "/views/unorderedStatus.jsp";
+    private static final String INPUT_PAGE = "/views/shipmentStatus.jsp";
 
     @Override
     public String process(HttpServletRequest req, HttpServletResponse res) throws Exception {

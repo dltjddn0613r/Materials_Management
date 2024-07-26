@@ -5,7 +5,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>견적서 현황</title>
+    <title>출하지시서 현황</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/9f79df219d.js" crossorigin="anonymous"></script>
     <style>
@@ -136,8 +136,15 @@
     </div>
     <div class="main-content">
         <div class="container mt-5">
-            <h2 class="mb-4 text-center"><b>견적서 현황</b></h2>
-            <form action="quoteStatus" method="post">
+            <h2 class="mb-4 text-center"><b>출하지시서 현황</b></h2>
+            <form action="shipmentOrderStatus" method="post">
+            
+            	<fieldset class="row mb-4">
+                    <legend class="col-form-label col-sm-2 pt-0"><b>일자</b></legend>
+                    <div class="col-sm-10">
+                        <input type="date" class="form-control" id="quoteDate" name="quoteDate" required>
+                    </div>
+                </fieldset>
             
                 <fieldset class="row mb-4">
                     <legend class="col-form-label col-sm-2 pt-0"><b>구분</b></legend>
@@ -185,27 +192,9 @@
                 </fieldset>
             
                 <fieldset class="row mb-4">
-                    <legend class="col-form-label col-sm-2 pt-0"><b>기준일자</b></legend>
+                    <legend class="col-form-label col-sm-2 pt-0"><b>출하예정일</b></legend>
                     <div class="col-sm-10">
-                        <input type="date" class="form-control" id="quoteDate" name="quoteDate" required>
-                    </div>
-                </fieldset>
-            
-                <fieldset class="row mb-4">
-                    <legend class="col-form-label col-sm-2 pt-0"><b>내.외자구분</b></legend>
-                    <div class="col-sm-10">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="Domestic/ForeignType" value="전체">
-                            <label class="form-check-label">전체</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="Domestic/ForeignType" value="내자">
-                            <label class="form-check-label">내자</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="Domestic/ForeignType" value="외자">
-                            <label class="form-check-label">외자</label>
-                        </div>
+                        <input type="date" class="form-control" id="shipmentOrderDate" name="shipmentOrderDate" required>
                     </div>
                 </fieldset>
             
@@ -260,6 +249,13 @@
                 </fieldset>
                 
                 <fieldset class="row mb-4">
+                    <legend class="col-form-label col-sm-2 pt-0"><b>규격</b></legend>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="Specification" placeholder="규격" required>
+                    </div>
+                </fieldset>
+                
+                <fieldset class="row mb-4">
                     <legend class="col-form-label col-sm-2 pt-0"><b>담당자</b></legend>
                     <div class="col-sm-10">
                         <div class="input-group">
@@ -278,108 +274,6 @@
                         </div>
                     </div>
                 </fieldset>
-                
-                <fieldset class="row mb-4">
-                    <legend class="col-form-label col-sm-2 pt-0"><b>외화종류</b></legend>
-                    <div class="col-sm-10">
-                        <div class="input-group">
-                            <input class="form-control" type="text" name="ForeignCurrencyType" placeholder="외화종류">
-                            <button class="btn btn-outline-secondary" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-                        </div>
-                    </div>
-                </fieldset>
-                
-                <fieldset class="row mb-4">
-                    <legend class="col-form-label col-sm-2 pt-0"><b>거래유형</b></legend>
-                    <div class="col-sm-10">
-                        <div class="input-group">
-                            <input class="form-control" type="text" name="TransactionType" placeholder="거래유형">
-                            <button class="btn btn-outline-secondary" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-                        </div>
-                    </div>
-                </fieldset>
-                
-                <fieldset class="row mb-4">
-                    <legend class="col-form-label col-sm-2 pt-0"><b>새로운 항목 추가</b></legend>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" name="NewItem" placeholder="새로운 항목 추가" required>
-                    </div>
-                </fieldset>
-            
-                <fieldset class="row mb-4">
-                    <legend class="col-form-label col-sm-2 pt-0"><b>규격</b></legend>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" name="Specification" placeholder="규격" required>
-                    </div>
-                </fieldset>
-            
-                <fieldset class="row mb-4">
-                    <legend class="col-form-label col-sm-2 pt-0"><b>수량</b></legend>
-                    <div class="col-sm-10">
-                        <div class="row">
-                            <div class="col">
-                                <input type="text" class="form-control" aria-label="Qty.frist" placeholder="수량">
-                            </div>
-                            <div class="col text-center">
-                                ~
-                            </div>
-                            <div class="col">
-                                <input type="text" class="form-control" aria-label="Qty.last">
-                            </div>
-                        </div>
-                    </div>
-                </fieldset>
-                
-                <fieldset class="row mb-4">
-                    <legend class="col-form-label col-sm-2 pt-0"><b>단가</b></legend>
-                    <div class="col-sm-10">
-                        <div class="row">
-                            <div class="col">
-                                <input type="text" class="form-control" aria-label="Price.frist" placeholder="단가">
-                            </div>
-                            <div class="col text-center">
-                                ~
-                            </div>
-                            <div class="col">
-                                <input type="text" class="form-control" aria-label="Price.last">
-                            </div>
-                        </div>
-                    </div>
-                </fieldset>
-                
-                <fieldset class="row mb-4">
-                    <legend class="col-form-label col-sm-2 pt-0"><b>공급가액</b></legend>
-                    <div class="col-sm-10">
-                        <div class="row">
-                            <div class="col">
-                                <input type="text" class="form-control" aria-label="Amount.frist" placeholder="공급가액">
-                            </div>
-                            <div class="col text-center">
-                                ~
-                            </div>
-                            <div class="col">
-                                <input type="text" class="form-control" aria-label="Amount.last">
-                            </div>
-                        </div>
-                    </div>
-                </fieldset>
-                
-                <fieldset class="row mb-4">
-                    <legend class="col-form-label col-sm-2 pt-0"><b>부가세</b></legend>
-                    <div class="col-sm-10">
-                        <div class="row">
-                            <div class="col">
-                                <input type="text" class="form-control" aria-label="Tax.frist" placeholder="부가세">
-                            </div>
-                            <div class="col text-center">
-                                ~
-                            </div>
-                            <div class="col">
-                                <input type="text" class="form-control" aria-label="Tax.last">
-                            </div>
-                        </div>
-                    </div>
-                </fieldset>
             
                 <fieldset class="row mb-4">
                     <legend class="col-form-label col-sm-2 pt-0"><b>진행상태</b></legend>
@@ -393,18 +287,28 @@
                             <label class="form-check-label">결재중</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" name="quotePS_Unconfirmed" value="미확인">
-                            <label class="form-check-label">미확인</label>
-                        </div>
-                        <div class="form-check form-check-inline">
                             <input class="form-check-input" type="checkbox" name="quotePS_Confirmed" value="확인">
                             <label class="form-check-label">확인</label>
                         </div>
                         <div class="input-group mt-2">
-                        <span class="badge text-bg-secondary me-2">확인-진행상태</span>
+                            <span class="badge text-bg-secondary me-2">확인-진행상태</span>
                             <input class="form-control" type="text" name="Confirm-PS" placeholder="확인-진행상태">
                             <button class="btn btn-outline-secondary" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                         </div>
+                    </div>
+                </fieldset>
+            
+           		 <fieldset class="row mb-4">
+                    <legend class="col-form-label col-sm-2 pt-0"><b>새로운 항목 추가</b></legend>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="NewItem" placeholder="새로운 항목 추가" required>
+                    </div>
+                </fieldset>
+                
+                <fieldset class="row mb-4">
+                    <legend class="col-form-label col-sm-2 pt-0"><b>새로운 항목 추가</b></legend>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="NewItem" placeholder="새로운 항목 추가" required>
                     </div>
                 </fieldset>
             
@@ -432,8 +336,7 @@
                     <button type="submit" class="btn btn-primary px-5">저장</button>
                 </div>
             </form>
-        </div></div>
-        
+        </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     </body>
     </html>

@@ -5,7 +5,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>견적서 현황</title>
+    <title>주문서 현황</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/9f79df219d.js" crossorigin="anonymous"></script>
     <style>
@@ -136,8 +136,8 @@
     </div>
     <div class="main-content">
         <div class="container mt-5">
-            <h2 class="mb-4 text-center"><b>견적서 현황</b></h2>
-            <form action="quoteStatus" method="post">
+            <h2 class="mb-4 text-center"><b>주문서 현황</b></h2>
+            <form action="orderStatus" method="post">
             
                 <fieldset class="row mb-4">
                     <legend class="col-form-label col-sm-2 pt-0"><b>구분</b></legend>
@@ -206,6 +206,13 @@
                             <input class="form-check-input" type="radio" name="Domestic/ForeignType" value="외자">
                             <label class="form-check-label">외자</label>
                         </div>
+                    </div>
+                </fieldset>
+            
+                <fieldset class="row mb-4">
+                    <legend class="col-form-label col-sm-2 pt-0"><b>품목별납기일자</b></legend>
+                    <div class="col-sm-10">
+                        <input type="date" class="form-control" id="Delivery Date by Item" name="Delivery Date by Item" required>
                     </div>
                 </fieldset>
             
@@ -331,6 +338,24 @@
                 </fieldset>
                 
                 <fieldset class="row mb-4">
+                    <legend class="col-form-label col-sm-2 pt-0"><b>거래구분</b></legend>
+                    <div class="col-sm-10">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="All" value="전체">
+                            <label class="form-check-label">전체</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="General" value="일반">
+                            <label class="form-check-label">내자</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="Returns" value="반품">
+                            <label class="form-check-label">외자</label>
+                        </div>
+                    </div>
+                </fieldset>
+                
+                <fieldset class="row mb-4">
                     <legend class="col-form-label col-sm-2 pt-0"><b>단가</b></legend>
                     <div class="col-sm-10">
                         <div class="row">
@@ -382,26 +407,37 @@
                 </fieldset>
             
                 <fieldset class="row mb-4">
+                    <legend class="col-form-label col-sm-2 pt-0"><b>새로운 항목 추가</b></legend>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="NewItem" placeholder="새로운 항목 추가" required>
+                    </div>
+                </fieldset>
+            
+                <fieldset class="row mb-4">
                     <legend class="col-form-label col-sm-2 pt-0"><b>진행상태</b></legend>
                     <div class="col-sm-10">
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" name="quotePS_All" value="전체">
+                            <input class="form-check-input" type="checkbox" name="orderS_All" value="전체">
                             <label class="form-check-label">전체</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" name="quotePS_e-Approval" value="결재중">
+                            <input class="form-check-input" type="checkbox" name="orderS_e-Approval" value="결재중">
                             <label class="form-check-label">결재중</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" name="quotePS_Unconfirmed" value="미확인">
+                            <input class="form-check-input" type="checkbox" name="orderS_C-Portal" value="C-Portal">
+                            <label class="form-check-label">C-Portal</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="orderS_Unconfirmed" value="미확인">
                             <label class="form-check-label">미확인</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" name="quotePS_Confirmed" value="확인">
+                            <input class="form-check-input" type="checkbox" name="orderS_Confirmed" value="확인">
                             <label class="form-check-label">확인</label>
                         </div>
                         <div class="input-group mt-2">
-                        <span class="badge text-bg-secondary me-2">확인-진행상태</span>
+                            <span class="badge text-bg-secondary me-2">확인-진행상태</span>
                             <input class="form-control" type="text" name="Confirm-PS" placeholder="확인-진행상태">
                             <button class="btn btn-outline-secondary" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                         </div>
@@ -433,7 +469,6 @@
                 </div>
             </form>
         </div></div>
-        
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     </body>
     </html>

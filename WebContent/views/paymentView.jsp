@@ -47,7 +47,7 @@
     </style>
 </head>
 <body>
-    <div class="accordion-container">
+<div class="accordion-container">
         <div class="accordion" id="accordionPanelsStayOpenExample">
             <!-- 견적서 -->
             <div class="accordion-item">
@@ -75,10 +75,10 @@
                 <div id="orderAccordion" class="accordion-collapse collapse">
                     <div class="accordion-body">
                         <a href="${pageContext.request.contextPath}/orderView" class="clickable-item">주문서 조회</a>
-                        <a href="orderInput.jsp" class="clickable-item">주문서 입력</a>
-                        <a href="orderStatus.jsp" class="clickable-item">주문서 현황</a>
-                        <a href="orderShipping.jsp" class="clickable-item">주문서 출고처리</a>
-                        <a href="unsoldStatus.jsp" class="clickable-item">미판매현황</a>
+                        <a href="${pageContext.request.contextPath}/orderInput" class="clickable-item">주문서 입력</a>
+                        <a href="${pageContext.request.contextPath}/orderStatus" class="clickable-item">주문서 현황</a>
+                        <a href="${pageContext.request.contextPath}/orderShipping" class="clickable-item">주문서 출고처리</a>
+                        <a href="${pageContext.request.contextPath}/unsoldStatus" class="clickable-item">미판매현황</a>
                     </div>
                 </div>
             </div>
@@ -92,12 +92,12 @@
                 <div id="salesAccordion" class="accordion-collapse collapse">
                     <div class="accordion-body">
                         <a href="${pageContext.request.contextPath}/salesView" class="clickable-item">판매 조회</a>
-                        <a href="salesInput.jsp" class="clickable-item">판매 입력</a>
-                        <a href="salesInput2.jsp" class="clickable-item">판매 입력2</a>
-                        <a href="salesPriceChange.jsp" class="clickable-item">판매단가 일관변경</a>
-                        <a href="salesStatus.jsp" class="clickable-item">판매 현황</a>
-                        <a href="${pageContext.request.contextPath}paymentView" class="clickable-item">결제 내역 조회</a>
-                        <a href="paymentComparison.jsp" class="clickable-item">결제 내역 자료비교</a>
+                        <a href="${pageContext.request.contextPath}/salesInput" class="clickable-item">판매 입력</a>
+                        <a href="${pageContext.request.contextPath}/salesInput2" class="clickable-item">판매 입력2</a>
+                        <a href="${pageContext.request.contextPath}/salesPriceChange" class="clickable-item">판매단가 일관변경</a>
+                        <a href="${pageContext.request.contextPath}/salesStatus" class="clickable-item">판매 현황</a>
+                        <a href="${pageContext.request.contextPath}/paymentView" class="clickable-item">결제 내역 조회</a>
+                        <a href="${pageContext.request.contextPath}/paymentComparison" class="clickable-item">결제 내역 자료비교</a>
                     </div>
                 </div>
             </div>
@@ -111,8 +111,8 @@
                 <div id="shipmentOrderAccordion" class="accordion-collapse collapse">
                     <div class="accordion-body">
                         <a href="${pageContext.request.contextPath}/shipmentOrderView" class="clickable-item">출하지시서 조회</a>
-                        <a href="shipmentOrderInput.jsp" class="clickable-item">출하지시서 입력</a>
-                        <a href="shipmentOrderStatus.jsp" class="clickable-item">출하지시서 현황</a>
+                        <a href="${pageContext.request.contextPath}/shipmentOrderInput" class="clickable-item">출하지시서 입력</a>
+                        <a href="${pageContext.request.contextPath}/shipmentOrderStatus" class="clickable-item">출하지시서 현황</a>
                     </div>
                 </div>
             </div>
@@ -126,8 +126,8 @@
                 <div id="shipmentAccordion" class="accordion-collapse collapse">
                     <div class="accordion-body">
                         <a href="${pageContext.request.contextPath}/shipmentView" class="clickable-item">출하 조회</a>
-                        <a href="shipmentInput.jsp" class="clickable-item">출하 입력</a>
-                        <a href="shipmentStatus.jsp" class="clickable-item">출하 현황</a>
+                        <a href="${pageContext.request.contextPath}/shipmentInput" class="clickable-item">출하 입력</a>
+                        <a href="${pageContext.request.contextPath}/shipmentStatus" class="clickable-item">출하 현황</a>
                     </div>
                 </div>
             </div>
