@@ -12,7 +12,7 @@ public class TestInsertQuote {
 
         Quote quote = new Quote();
         
-        // 현재 날짜와 유효기간 날짜 설정dd
+        // 현재 날짜와 유효기간 날짜 설정
         Date currentDate = new Date(Calendar.getInstance().getTimeInMillis());
         Calendar calendar = Calendar.getInstance();
         calendar.add(Calendar.DAY_OF_MONTH, 30);
