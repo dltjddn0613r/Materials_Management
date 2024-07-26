@@ -402,7 +402,7 @@
                             <label class="form-check-label">확인</label>
                         </div>
                         <div class="input-group mt-2">
-                            <span class="badge text-bg-secondary me-2">확인-진행상태</span>
+                        <span class="badge text-bg-secondary me-2">확인-진행상태</span>
                             <input class="form-control" type="text" name="Confirm-PS" placeholder="확인-진행상태">
                             <button class="btn btn-outline-secondary" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                         </div>
@@ -433,7 +433,7 @@
                     <button type="submit" class="btn btn-primary px-5">저장</button>
                 </div>
             </form>
-        </div>
+        </div></div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     </body>
     </html>
