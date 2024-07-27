@@ -2,11 +2,11 @@
     pageEncoding="UTF-8"%>
    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
-<!-- 주석 -->
+<!-- 주석 -->0
 <html >
 <head>
     <meta charset="UTF-8">
-    <title>견적서 조회</title>
+    <title>주문서출고처리</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         /* 기본 레이아웃 스타일 */
@@ -136,9 +136,16 @@
     </div>
     <div class="main-content">
         <h2 class="d-inline">주문서출고처리</h2>
-        <div class="d-inline">
-            <input type="text" class="form-control d-inline" style="width: 200px;" placeholder="검색창." aria-label="Search">
-            <button class="btn btn-primary">검색</button>
+        <div class="d-inline gap-2 d-md-flex justify-content-md-end">
+            <input type="text" class="form-control d-inline" style="width: 200px;" placeholder="입력 후[Enter]" aria-label="Search">
+            <button class="btn btn-primary">Search(F3)</button>
+            <button class="btn btn-light">Option</button>
+            <button class="btn btn-light">도움말</button>
+        </div>
+        
+         <div>
+<a href="#" class="btn btn-secondary btn-sm disabled" tabindex="-1" role="button" aria-disabled="true">미처리</a>
+<a href="#" class="btn btn-primary btn-sm disabled" tabindex="-1" role="button" aria-disabled="true">처리</a>
         </div>
         <div class="mt-3">
             <table class="table table-bordered">
@@ -146,12 +153,12 @@
                     <tr>
                         <th><input type="checkbox" id="checkAll" aria-label="전체 선택"></th>
                         <th>일자</th>
+                        <th>일자</th>
                         <th>거래처명</th>
-                        <th>품목명</th>
-                        <th>잔량</th>
+                        <th>품목</th>
                         <th>출고수량</th>
-                        <th>납기일자</th>
-                        <th>적요</th>
+                        <th>판매</th>
+                        <th>인쇄</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -180,6 +187,14 @@
                     </c:choose>
                 </tbody>
             </table>
+            		<form action=""></form>
+                    <button type="submit" class="btn btn-primary">판매입력</button>
+                    <button type="submit" class="btn btn-light">Email</button>
+                    <button type="submit" class="btn btn-light">인쇄</button>
+                    <button type="submit" class="btn btn-light">Excel</button>
+                    <button type="submit" class="btn btn-light">처리구분변경</button>
+                    <button type="submit" class="btn btn-light">처리취소</button>
+                   </form>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
