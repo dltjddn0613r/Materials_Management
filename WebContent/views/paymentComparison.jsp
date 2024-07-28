@@ -2,11 +2,12 @@
     pageEncoding="UTF-8"%>
    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
-<html >
-<head>
+<html>
+<head> 
     <meta charset="UTF-8">
-    <title>견적서 입력</title>
+    <title>결제내역자료비교</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/9f79df219d.js" crossorigin="anonymous"></script>
     <style>
         /* 기본 레이아웃 스타일 */
         body {
@@ -47,7 +48,7 @@
     </style>
 </head>
 <body>
-  <div class="accordion-container">
+    <div class="accordion-container">
         <div class="accordion" id="accordionPanelsStayOpenExample">
             <!-- 견적서 -->
             <div class="accordion-item">
@@ -134,43 +135,49 @@
         </div>
     </div>
     <div class="main-content">
-        <h2>견적서 입력</h2>
-        <form action="${pageContext.request.contextPath}/insertQuote" method="post">
-            <div class="mb-3">
-                <label for="quoteDate" class="form-label">일자</label>
-                <input type="date" class="form-control" id="quoteDate" name="quoteDate" required>
-            </div>
-            <div class="mb-3">
-                <label for="quoteNumber" class="form-label">견적번호</label>
-                <input type="text" class="form-control" id="quoteNumber" name="quoteNumber" required>
-            </div>
-            <div class="mb-3">
-                <label for="customerCode" class="form-label">거래처명</label>
-                <input type="text" class="form-control" id="customerCode" name="customerCode" required>
-            </div>
-            <div class="mb-3">
-                <label for="employeeCode" class="form-label">담당자명</label>
-                <input type="text" class="form-control" id="employeeCode" name="employeeCode" required>
-            </div>
-            <div class="mb-3">
-                <label for="productCode" class="form-label">품목명</label>
-                <input type="text" class="form-control" id="productCode" name="productCode" required>
-            </div>
-            <div class="mb-3">
-                <label for="validityPeriod" class="form-label">유효기간</label>
-                <input type="date" class="form-control" id="validityPeriod" name="validityPeriod">
-            </div>
-            <div class="mb-3">
-                <label for="totalAmount" class="form-label">견적금액합계</label>
-                <input type="number" step="0.01" class="form-control" id="totalAmount" name="totalAmount" required>
-            </div>
-            <div class="mb-3">
-                <label for="status" class="form-label">진행상태</label>
-                <input type="text" class="form-control" id="status" name="status">
-            </div>
-            <button type="submit" class="btn btn-primary">저장</button>
-        </form>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+        <div class="container mt-5">
+            <h2 class="mb-4 text-left"><b>결제내역자료비교</b></h2>
+            <form action="quoteStatus" method="post">
+            
+                <fieldset class="row mb-4">
+                    <legend class="col-form-label col-sm-2 pt-0"><b>기준일자</b></legend>
+                    <div class="col-sm-10">
+                        <input type="date" class="form-control" id="quoteDate" name="quoteDate" required>
+                    </div>
+                </fieldset>
+            
+                <fieldset class="row mb-4">
+                    <legend class="col-form-label col-sm-2 pt-0"><b>거래처</b></legend>
+                    <div class="col-sm-10">
+                        <div class="input-group">
+                            <input class="form-control" type="text" name="Customers" placeholder="거래처">
+                            <button class="btn btn-outline-secondary" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        </div>
+                    </div>
+                </fieldset>
+                
+                 <fieldset class="row mb-4">
+                    <legend class="col-form-label col-sm-2 pt-0"><b>자료기준</b></legend>
+                    <div class="col-sm-10">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="quoteType" value="전체">
+                            <label class="form-check-label">전체</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="quoteType" value="일치">
+                            <label class="form-check-label">일치</label>
+                        </div>            
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="quoteType" value="불일치">
+                            <label class="form-check-label">불일치</label>
+                        </div>            
+                    </div>
+                </fieldset>
+                
+                <a href="${pageContext.request.contextPath}/quoteInput" class="btn btn-success">검색</a> <!-- 신규 버튼 추가 -->
+              
+            </form>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
