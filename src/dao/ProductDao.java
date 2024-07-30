@@ -10,7 +10,6 @@ import java.util.List;
 
 import jdbc.JdbcUtil;
 import model.Product;
-import model.Sale;
 
 public class ProductDao {
 
@@ -79,14 +78,14 @@ public class ProductDao {
         ResultSet rs = null;
         try {
           
-            pstmt = conn.prepareStatement("SELECT * FROM (SELECT rownum AS rnum, a.* FROM (SELECT * FROM Product ORDER BY SaleDate DESC) a WHERE rownum <= ?) WHERE rnum >= ?");
+            pstmt = conn.prepareStatement("SELECT * FROM (SELECT rownum AS rnum, a.* FROM (SELECT * FROM Product ORDER BY ProductCode DESC) a WHERE rownum <= ?) WHERE rnum >= ?");
             pstmt.setInt(1, endRow);
             pstmt.setInt(2, firstRow);
 
             rs = pstmt.executeQuery();
             List<Product> result = new ArrayList<>();
             while (rs.next()) {
-            	result.add(convertSale(rs));
+            	result.add(convertProduct(rs));
             }
             return result;
         } finally {
@@ -94,4 +93,35 @@ public class ProductDao {
             JdbcUtil.close(pstmt);
         }
     }
+	
+	 private Product convertProduct(ResultSet rs) throws SQLException {
+	        return new Product(
+	            rs.getString("ProductCode"),
+	            rs.getString("ProductName"),
+	            rs.getString("ProductGroup"),
+	            rs.getDouble("Price"),
+	            rs.getString("Barcode"),
+	            rs.getDouble("PurchasePrice"),
+	            rs.getDouble("SellingPrice"),
+	            rs.getString("ProductionProcess"),
+	            rs.getBlob("Image")
+	        );
+	    }
+	 public Product selectById(Connection conn, String ProductCode) throws SQLException {
+	        PreparedStatement pstmt = null;
+	        ResultSet rs = null;
+	        try {
+	            pstmt = conn.prepareStatement("SELECT * FROM Product WHERE ProductCode = ?");
+	            pstmt.setString(1, ProductCode);
+
+	            rs = pstmt.executeQuery();
+	            if (rs.next()) {
+	                return convertProduct(rs);
+	            }
+	            return null;
+	        } finally {
+	            JdbcUtil.close(rs);
+	            JdbcUtil.close(pstmt);
+	        }
+	    }
 }
