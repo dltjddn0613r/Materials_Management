@@ -2,40 +2,41 @@ package model;
 
 public class OrderManagement {
 
-	private String OrderNumber;
-	private String OrderName;
-	private String OrderType;
+	private String orderNumber;
+	private String orderName;
+	private String orderType;
 	
 	public OrderManagement(String orderNumber, String orderName, String orderType) {
 		
-		this.OrderNumber = orderNumber;
-		this.OrderName = orderName;
-		this.OrderType = orderType;
+		this.orderNumber = orderNumber;
+		this.orderName = orderName;
+		this.orderType = orderType;
 	}
 
 	public String getOrderNumber() {
-		return OrderNumber;
+		return orderNumber;
 	}
 
 	public String getOrderName() {
-		return OrderName;
+		return orderName;
 	}
 
 	public String getOrderType() {
-		return OrderType;
+		return orderType;
 	}
 
 	public void setOrderNumber(String orderNumber) {
-		OrderNumber = orderNumber;
+		this.orderNumber = orderNumber;
 	}
 
 	public void setOrderName(String orderName) {
-		OrderName = orderName;
+		this.orderName = orderName;
 	}
 
 	public void setOrderType(String orderType) {
-		OrderType = orderType;
+		this.orderType = orderType;
 	}
+	
 	
 	
 }

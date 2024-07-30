@@ -2,29 +2,30 @@ package model;
 
 public class TransactionType {
 
-	private String TransactionTypeCode;
-	private String TransactionTypeName;
+	private String transactionTypeCode;
+	private String transactionTypeName;
 	
 	public TransactionType(String transactionTypeCode, String transactionTypeName) {
 		
-		this.TransactionTypeCode = transactionTypeCode;
-		this.TransactionTypeName = transactionTypeName;
+		this.transactionTypeCode = transactionTypeCode;
+		this.transactionTypeName = transactionTypeName;
 	}
 
 	public String getTransactionTypeCode() {
-		return TransactionTypeCode;
+		return transactionTypeCode;
 	}
 
 	public String getTransactionTypeName() {
-		return TransactionTypeName;
+		return transactionTypeName;
 	}
 
 	public void setTransactionTypeCode(String transactionTypeCode) {
-		TransactionTypeCode = transactionTypeCode;
+		this.transactionTypeCode = transactionTypeCode;
 	}
 
 	public void setTransactionTypeName(String transactionTypeName) {
-		TransactionTypeName = transactionTypeName;
+		this.transactionTypeName = transactionTypeName;
 	}
+	
 	
 }

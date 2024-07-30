@@ -2,49 +2,49 @@ package model;
 
 public class Project {
 
-	private String ProjectCode;
-	private String ProjectName;
-	private String ProjectMenu;
-	private String ProjectMemo;
+	private String projectCode;
+	private String projectName;
+	private String projectMenu;
+	private String projectMemo;
 	
 	public Project(String projectCode, String projectName, String projectMenu, String projectMemo) {
 		
-		this.ProjectCode = projectCode;
-		this.ProjectName = projectName;
-		this.ProjectMenu = projectMenu;
-		this.ProjectMemo = projectMemo;
+		this.projectCode = projectCode;
+		this.projectName = projectName;
+		this.projectMenu = projectMenu;
+		this.projectMemo = projectMemo;
 	}
 
 	public String getProjectCode() {
-		return ProjectCode;
+		return projectCode;
 	}
 
 	public String getProjectName() {
-		return ProjectName;
+		return projectName;
 	}
 
 	public String getProjectMenu() {
-		return ProjectMenu;
+		return projectMenu;
 	}
 
 	public String getProjectMemo() {
-		return ProjectMemo;
+		return projectMemo;
 	}
 
 	public void setProjectCode(String projectCode) {
-		ProjectCode = projectCode;
+		this.projectCode = projectCode;
 	}
 
 	public void setProjectName(String projectName) {
-		ProjectName = projectName;
+		this.projectName = projectName;
 	}
 
 	public void setProjectMenu(String projectMenu) {
-		ProjectMenu = projectMenu;
+		this.projectMenu = projectMenu;
 	}
 
 	public void setProjectMemo(String projectMemo) {
-		ProjectMemo = projectMemo;
+		this.projectMemo = projectMemo;
 	}
 	
 	

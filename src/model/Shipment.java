@@ -4,60 +4,59 @@ import java.util.Date;
 
 public class Shipment {
 
-	private String ShipmentID;
-	private Date ShipmentDate;
-	private String ProductCode;
-	private Integer Quantity;
-	private String Status;
+	private String shipmentID;
+	private Date shipmentDate;
+	private String productCode;
+	private Integer quantity;
+	private String status;
 	
 	public Shipment(String shipmentID, Date shipmentDate, String productCode, Integer quantity, String status) {
 		
-		this.ShipmentID = shipmentID;
-		this.ShipmentDate = shipmentDate;
-		this.ProductCode = productCode;
-		this.Quantity = quantity;
-		this.Status = status;
+		this.shipmentID = shipmentID;
+		this.shipmentDate = shipmentDate;
+		this.productCode = productCode;
+		this.quantity = quantity;
+		this.status = status;
 	}
 
 	public String getShipmentID() {
-		return ShipmentID;
+		return shipmentID;
 	}
 
 	public Date getShipmentDate() {
-		return ShipmentDate;
+		return shipmentDate;
 	}
 
 	public String getProductCode() {
-		return ProductCode;
+		return productCode;
 	}
 
 	public Integer getQuantity() {
-		return Quantity;
+		return quantity;
 	}
 
 	public String getStatus() {
-		return Status;
+		return status;
 	}
 
 	public void setShipmentID(String shipmentID) {
-		ShipmentID = shipmentID;
+		this.shipmentID = shipmentID;
 	}
 
 	public void setShipmentDate(Date shipmentDate) {
-		ShipmentDate = shipmentDate;
+		this.shipmentDate = shipmentDate;
 	}
 
 	public void setProductCode(String productCode) {
-		ProductCode = productCode;
+		this.productCode = productCode;
 	}
 
 	public void setQuantity(Integer quantity) {
-		Quantity = quantity;
+		this.quantity = quantity;
 	}
 
 	public void setStatus(String status) {
-		Status = status;
+		this.status = status;
 	}
-	
 	
 }

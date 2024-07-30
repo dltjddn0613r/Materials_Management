@@ -2,80 +2,80 @@ package model;
 
 public class Employee {
 
-	private String EmployeeCode;
-	private String EmployeeName;
-	private String SearchContent;
-	private String MenuCodeUsage;
-	private String Memo;
-	private String ContactNumber;
-	private String Email;
+	private String employeeCode;
+	private String employeeName;
+	private String searchContent;
+	private String menuCodeUsage;
+	private String memo;
+	private String contactNumber;
+	private String email;
 	
 	public Employee(String employeeCode, String employeeName, String searchContent, String menuCodeUsage, String memo,
 			String contactNumber, String email) {
 		
-		this.EmployeeCode = employeeCode;
-		this.EmployeeName = employeeName;
-		this.SearchContent = searchContent;
-		this.MenuCodeUsage = menuCodeUsage;
-		this.Memo = memo;
-		this.ContactNumber = contactNumber;
-		this.Email = email;
+		this.employeeCode = employeeCode;
+		this.employeeName = employeeName;
+		this.searchContent = searchContent;
+		this.menuCodeUsage = menuCodeUsage;
+		this.memo = memo;
+		this.contactNumber = contactNumber;
+		this.email = email;
 	}
 
 	public String getEmployeeCode() {
-		return EmployeeCode;
+		return employeeCode;
 	}
 
 	public String getEmployeeName() {
-		return EmployeeName;
+		return employeeName;
 	}
 
 	public String getSearchContent() {
-		return SearchContent;
+		return searchContent;
 	}
 
 	public String getMenuCodeUsage() {
-		return MenuCodeUsage;
+		return menuCodeUsage;
 	}
 
 	public String getMemo() {
-		return Memo;
+		return memo;
 	}
 
 	public String getContactNumber() {
-		return ContactNumber;
+		return contactNumber;
 	}
 
 	public String getEmail() {
-		return Email;
+		return email;
 	}
 
 	public void setEmployeeCode(String employeeCode) {
-		EmployeeCode = employeeCode;
+		this.employeeCode = employeeCode;
 	}
 
 	public void setEmployeeName(String employeeName) {
-		EmployeeName = employeeName;
+		this.employeeName = employeeName;
 	}
 
 	public void setSearchContent(String searchContent) {
-		SearchContent = searchContent;
+		this.searchContent = searchContent;
 	}
 
 	public void setMenuCodeUsage(String menuCodeUsage) {
-		MenuCodeUsage = menuCodeUsage;
+		this.menuCodeUsage = menuCodeUsage;
 	}
 
 	public void setMemo(String memo) {
-		Memo = memo;
+		this.memo = memo;
 	}
 
 	public void setContactNumber(String contactNumber) {
-		ContactNumber = contactNumber;
+		this.contactNumber = contactNumber;
 	}
 
 	public void setEmail(String email) {
-		Email = email;
+		this.email = email;
 	}
 	
 	

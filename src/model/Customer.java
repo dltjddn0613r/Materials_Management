@@ -2,151 +2,151 @@ package model;
 
 public class Customer {
 
-	private String CustomerCode;
-	private String CustomerName;
-	private String CEOName;
-	private String BusinessType;
-	private String Industry;
-	private String Phone;
-	private String Fax;
-	private String SearchContent;
-	private String Mobile;
-	private String PostalCode;
-	private String Address1;
-	private String Website;
-	private String ResponsibleEmployee;
-	private String Email;
+	private String customerCode;
+	private String customerName;
+	private String ceoName;
+	private String businessType;
+	private String industry;
+	private String phone;
+	private String fax;
+	private String searchContent;
+	private String mobile;
+	private String postalCode;
+	private String address1;
+	private String website;
+	private String responsibleEmployee;
+	private String email;
 	
-	public Customer(String customerCode, String customerName, String cEOName, String businessType, String industry,
+	public Customer(String customerCode, String customerName, String ceoName, String businessType, String industry,
 			String phone, String fax, String searchContent, String mobile, String postalCode, String address1,
 			String website, String responsibleEmployee, String email) {
-		
-		this.CustomerCode = customerCode;
-		this.CustomerName = customerName;
-		this.CEOName = cEOName;
-		this.BusinessType = businessType;
-		this.Industry = industry;
-		this.Phone = phone;
-		this.Fax = fax;
-		this.SearchContent = searchContent;
-		this.Mobile = mobile;
-		this.PostalCode = postalCode;
-		this.Address1 = address1;
-		this.Website = website;
-		this.ResponsibleEmployee = responsibleEmployee;
-		this.Email = email;
+		super();
+		this.customerCode = customerCode;
+		this.customerName = customerName;
+		this.ceoName = ceoName;
+		this.businessType = businessType;
+		this.industry = industry;
+		this.phone = phone;
+		this.fax = fax;
+		this.searchContent = searchContent;
+		this.mobile = mobile;
+		this.postalCode = postalCode;
+		this.address1 = address1;
+		this.website = website;
+		this.responsibleEmployee = responsibleEmployee;
+		this.email = email;
 	}
 
 	public String getCustomerCode() {
-		return CustomerCode;
+		return customerCode;
 	}
 
 	public String getCustomerName() {
-		return CustomerName;
+		return customerName;
 	}
 
-	public String getCEOName() {
-		return CEOName;
+	public String getCeoName() {
+		return ceoName;
 	}
 
 	public String getBusinessType() {
-		return BusinessType;
+		return businessType;
 	}
 
 	public String getIndustry() {
-		return Industry;
+		return industry;
 	}
 
 	public String getPhone() {
-		return Phone;
+		return phone;
 	}
 
 	public String getFax() {
-		return Fax;
+		return fax;
 	}
 
 	public String getSearchContent() {
-		return SearchContent;
+		return searchContent;
 	}
 
 	public String getMobile() {
-		return Mobile;
+		return mobile;
 	}
 
 	public String getPostalCode() {
-		return PostalCode;
+		return postalCode;
 	}
 
 	public String getAddress1() {
-		return Address1;
+		return address1;
 	}
 
 	public String getWebsite() {
-		return Website;
+		return website;
 	}
 
 	public String getResponsibleEmployee() {
-		return ResponsibleEmployee;
+		return responsibleEmployee;
 	}
 
 	public String getEmail() {
-		return Email;
+		return email;
 	}
 
 	public void setCustomerCode(String customerCode) {
-		CustomerCode = customerCode;
+		this.customerCode = customerCode;
 	}
 
 	public void setCustomerName(String customerName) {
-		CustomerName = customerName;
+		this.customerName = customerName;
 	}
 
-	public void setCEOName(String cEOName) {
-		CEOName = cEOName;
+	public void setCeoName(String ceoName) {
+		this.ceoName = ceoName;
 	}
 
 	public void setBusinessType(String businessType) {
-		BusinessType = businessType;
+		this.businessType = businessType;
 	}
 
 	public void setIndustry(String industry) {
-		Industry = industry;
+		this.industry = industry;
 	}
 
 	public void setPhone(String phone) {
-		Phone = phone;
+		this.phone = phone;
 	}
 
 	public void setFax(String fax) {
-		Fax = fax;
+		this.fax = fax;
 	}
 
 	public void setSearchContent(String searchContent) {
-		SearchContent = searchContent;
+		this.searchContent = searchContent;
 	}
 
 	public void setMobile(String mobile) {
-		Mobile = mobile;
+		this.mobile = mobile;
 	}
 
 	public void setPostalCode(String postalCode) {
-		PostalCode = postalCode;
+		this.postalCode = postalCode;
 	}
 
 	public void setAddress1(String address1) {
-		Address1 = address1;
+		this.address1 = address1;
 	}
 
 	public void setWebsite(String website) {
-		Website = website;
+		this.website = website;
 	}
 
 	public void setResponsibleEmployee(String responsibleEmployee) {
-		ResponsibleEmployee = responsibleEmployee;
+		this.responsibleEmployee = responsibleEmployee;
 	}
 
 	public void setEmail(String email) {
-		Email = email;
+		this.email = email;
 	}
 	
 	

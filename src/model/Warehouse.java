@@ -2,40 +2,41 @@ package model;
 
 public class Warehouse {
 
-	private String WarehouseCode;
-	private String WarehouseName;
-	private String WarehouseCategory;
+	private String warehouseCode;
+	private String warehouseName;
+	private String warehouseCategory;
 	
 	public Warehouse(String warehouseCode, String warehouseName, String warehouseCategory) {
 		
-		this.WarehouseCode = warehouseCode;
-		this.WarehouseName = warehouseName;
-		this.WarehouseCategory = warehouseCategory;
+		this.warehouseCode = warehouseCode;
+		this.warehouseName = warehouseName;
+		this.warehouseCategory = warehouseCategory;
 	}
 
 	public String getWarehouseCode() {
-		return WarehouseCode;
+		return warehouseCode;
 	}
 
 	public String getWarehouseName() {
-		return WarehouseName;
+		return warehouseName;
 	}
 
 	public String getWarehouseCategory() {
-		return WarehouseCategory;
+		return warehouseCategory;
 	}
 
 	public void setWarehouseCode(String warehouseCode) {
-		WarehouseCode = warehouseCode;
+		this.warehouseCode = warehouseCode;
 	}
 
 	public void setWarehouseName(String warehouseName) {
-		WarehouseName = warehouseName;
+		this.warehouseName = warehouseName;
 	}
 
 	public void setWarehouseCategory(String warehouseCategory) {
-		WarehouseCategory = warehouseCategory;
+		this.warehouseCategory = warehouseCategory;
 	}
+	
 	
 	
 }
