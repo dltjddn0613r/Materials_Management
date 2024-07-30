@@ -5,7 +5,7 @@
 <html >
 <head>
     <meta charset="UTF-8">
-    <title>견적서 입력</title>
+    <title>견적서 조회</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         /* 기본 레이아웃 스타일 */
@@ -47,7 +47,7 @@
     </style>
 </head>
 <body>
-  <div class="accordion-container">
+<div class="accordion-container">
         <div class="accordion" id="accordionPanelsStayOpenExample">
             <!-- 견적서 -->
             <div class="accordion-item">
@@ -134,43 +134,70 @@
         </div>
     </div>
     <div class="main-content">
-        <h2>견적서 입력</h2>
-        <form action="${pageContext.request.contextPath}/insertQuote" method="post">
-            <div class="mb-3">
-                <label for="quoteDate" class="form-label">일자</label>
-                <input type="date" class="form-control" id="quoteDate" name="quoteDate" required>
-            </div>
-            <div class="mb-3">
-                <label for="quoteNumber" class="form-label">견적번호</label>
-                <input type="text" class="form-control" id="quoteNumber" name="quoteNumber" required>
-            </div>
-            <div class="mb-3">
-                <label for="customerCode" class="form-label">거래처명</label>
-                <input type="text" class="form-control" id="customerCode" name="customerCode" required>
-            </div>
-            <div class="mb-3">
-                <label for="employeeCode" class="form-label">담당자명</label>
-                <input type="text" class="form-control" id="employeeCode" name="employeeCode" required>
-            </div>
-            <div class="mb-3">
-                <label for="productCode" class="form-label">품목명</label>
-                <input type="text" class="form-control" id="productCode" name="productCode" required>
-            </div>
-            <div class="mb-3">
-                <label for="validityPeriod" class="form-label">유효기간</label>
-                <input type="date" class="form-control" id="validityPeriod" name="validityPeriod">
-            </div>
-            <div class="mb-3">
-                <label for="totalAmount" class="form-label">견적금액합계</label>
-                <input type="number" step="0.01" class="form-control" id="totalAmount" name="totalAmount" required>
-            </div>
-            <div class="mb-3">
-                <label for="status" class="form-label">진행상태</label>
-                <input type="text" class="form-control" id="status" name="status">
-            </div>
-            <button type="submit" class="btn btn-primary">저장</button>
-        </form>
+        <h2 class="d-inline">결제내역 조회</h2>
+        <div class="d-inline">
+            <input type="text" class="form-control d-inline" style="width: 200px;" placeholder="검색창." aria-label="Search">
+            <button class="btn btn-primary">검색</button>
+             <a href="${pageContext.request.contextPath}/quoteInput" class="btn btn-success">신규</a> <!-- 신규 버튼 추가 -->
+             
+        </div>
+        <div class="mt-3">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th><input type="checkbox" id="checkAll" aria-label="전체 선택"></th>
+                        <th>결제요청일시</th>
+                        <th>결제요청자ID</th>
+                        <th>거래처</th>
+                        <th>품목</th>
+                        <th>결제금액</th>
+                        <th>결제방법</th>
+                        <th>결제상태</th>
+                        <th>승인번호</th>
+                        <th>재고전표</th>
+                        <th>상태별처리기능</th>
+                        <th>회계전표</th>
+                        <th>내역</th>
+                        <th>영수증인쇄</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <c:choose>
+                        <c:when test="${not empty quotes}">
+                            <c:forEach var="quote" items="${quotes}">
+                                <tr>
+                                    <td><input type="checkbox" class="rowCheck" aria-label="선택"></td>
+                                    <td>${quote.quoteDate}</td>
+                                    <td>${quote.customerCode}</td>
+                                    <td>${quote.employeeCode}</td>
+                                    <td>${quote.productCode}</td>
+                                    <td>${quote.validityPeriod}</td>
+                                    <td>${quote.totalAmount}</td>
+                                    <td>${quote.status}</td>
+                                    <td>${quote.createdVoucher}</td>
+                                    <td><button class="btn btn-secondary">인쇄</button></td>
+                                </tr>
+                            </c:forEach>
+                        </c:when>
+                        <c:otherwise>
+                            <tr>
+                                <td colspan="15" class="text-center">데이터가 없습니다.</td>
+                            </tr>
+                        </c:otherwise>
+                    </c:choose>
+                </tbody>
+            </table>
+        </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('checkAll').addEventListener('click', function() {
+            var checkboxes = document.querySelectorAll('.rowCheck');
+            for (var checkbox of checkboxes) {
+                checkbox.checked = this.checked;
+            }
+        });
+    </script>
 </body>
 </html>

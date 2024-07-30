@@ -48,6 +48,7 @@
     </style>
 </head>
 <body>
+<<<<<<< HEAD
     <div class="accordion-container">
         <div class="accordion" id="accordionPanelsStayOpenExample">
             <!-- 견적서 -->
@@ -276,3 +277,226 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     </body>
     </html>
+=======
+   <div class="accordion-container">
+        <div class="accordion" id="accordionPanelsStayOpenExample">
+            <!-- 견적서 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#quoteAccordion" aria-expanded="true" aria-controls="quoteAccordion">
+                       견적서
+                    </button>
+                </h2>
+                <div id="quoteAccordion" class="accordion-collapse collapse show">
+                    <div class="accordion-body">
+                        <a href="${pageContext.request.contextPath}/quoteView" class="clickable-item">견적서 조회</a>
+                        <a href="${pageContext.request.contextPath}/quoteInput"class="clickable-item">견적서 입력</a>
+                        <a href="${pageContext.request.contextPath}/quoteStatus" class="clickable-item">견적서 현황</a>
+                        <a href="${pageContext.request.contextPath}/unorderedStatus" class="clickable-item">미주문 현황</a>
+                    </div>
+                </div>
+            </div>
+            <!-- 주문서 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#orderAccordion" aria-expanded="false" aria-controls="orderAccordion">
+                       주문서
+                    </button>
+                </h2>
+                <div id="orderAccordion" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        <a href="${pageContext.request.contextPath}/orderView" class="clickable-item">주문서 조회</a>
+                        <a href="${pageContext.request.contextPath}/orderInput" class="clickable-item">주문서 입력</a>
+                        <a href="${pageContext.request.contextPath}/orderStatus" class="clickable-item">주문서 현황</a>
+                        <a href="${pageContext.request.contextPath}/orderShipping" class="clickable-item">주문서 출고처리</a>
+                        <a href="${pageContext.request.contextPath}/unsoldStatus" class="clickable-item">미판매현황</a>
+                    </div>
+                </div>
+            </div>
+            <!-- 판매 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#salesAccordion" aria-expanded="false" aria-controls="salesAccordion">
+                        판매
+                    </button>
+                </h2>
+                <div id="salesAccordion" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        <a href="${pageContext.request.contextPath}/salesView" class="clickable-item">판매 조회</a>
+                        <a href="${pageContext.request.contextPath}/salesInput" class="clickable-item">판매 입력</a>
+                        <a href="${pageContext.request.contextPath}/salesInput2" class="clickable-item">판매 입력2</a>
+                        <a href="${pageContext.request.contextPath}/salesPriceChange" class="clickable-item">판매단가 일관변경</a>
+                        <a href="${pageContext.request.contextPath}/salesStatus" class="clickable-item">판매 현황</a>
+                        <a href="${pageContext.request.contextPath}/paymentView" class="clickable-item">결제 내역 조회</a>
+                        <a href="${pageContext.request.contextPath}/paymentComparison" class="clickable-item">결제 내역 자료비교</a>
+                    </div>
+                </div>
+            </div>
+            <!-- 출하지시서 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#shipmentOrderAccordion" aria-expanded="false" aria-controls="shipmentOrderAccordion">
+                       출하지시서
+                    </button>
+                </h2>
+                <div id="shipmentOrderAccordion" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        <a href="${pageContext.request.contextPath}/shipmentOrderView" class="clickable-item">출하지시서 조회</a>
+                        <a href="${pageContext.request.contextPath}/shipmentOrderInput" class="clickable-item">출하지시서 입력</a>
+                        <a href="${pageContext.request.contextPath}/shipmentOrderStatus" class="clickable-item">출하지시서 현황</a>
+                    </div>
+                </div>
+            </div>
+            <!-- 출하 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#shipmentAccordion" aria-expanded="false" aria-controls="shipmentAccordion">
+                       출하
+                    </button>
+                </h2>
+                <div id="shipmentAccordion" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        <a href="${pageContext.request.contextPath}/shipmentView" class="clickable-item">출하 조회</a>
+                        <a href="${pageContext.request.contextPath}/shipmentInput" class="clickable-item">출하 입력</a>
+                        <a href="${pageContext.request.contextPath}/shipmentStatus" class="clickable-item">출하 현황</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main-content">
+        <div class="container mt-5">
+            <h2 class="mb-4 text-left"><b>판매단가일괄변경</b></h2>
+            <form action="quoteStatus" method="post">
+
+                <fieldset class="row mb-4">
+                    <legend class="col-form-label col-sm-2 pt-0"><b>구분</b></legend>
+                    <div class="col-sm-10">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="quoteType" value="단가변경">
+                            <label class="form-check-label">단가변경</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="quoteType" value="환율변경">
+                            <label class="form-check-label">환율변경</label>
+                        </div>            
+                    </div>
+                </fieldset>
+           
+                <fieldset class="row mb-4">
+                    <legend class="col-form-label col-sm-2 pt-0"><b>기준일자</b></legend>
+                    <div class="col-sm-10">
+                        <input type="date" class="form-control" id="quoteDate" name="quoteDate" required>
+                    </div>
+                </fieldset>
+            
+                 <fieldset class="row mb-4">
+                    <legend class="col-form-label col-sm-2 pt-0"><b>거래유형</b></legend>
+                    <div class="col-sm-10">
+                        <div class="input-group">
+                            <input class="form-control" type="text" name="Warehouse" placeholder="거래유형">
+                            <button class="btn btn-outline-secondary" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset class="row mb-4">
+                    <legend class="col-form-label col-sm-2 pt-0"><b>내.외자구분</b></legend>
+                    <div class="col-sm-10">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="Domestic/ForeignType" value="내자">
+                            <label class="form-check-label">내자</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="Domestic/ForeignType" value="외자">
+                            <label class="form-check-label">외자</label>
+                        </div>
+                    </div>
+                </fieldset>
+            
+                <fieldset class="row mb-4">
+                    <legend class="col-form-label col-sm-2 pt-0"><b>창고</b></legend>
+                    <div class="col-sm-10">
+                        <div class="input-group">
+                            <input class="form-control" type="text" name="Warehouse" placeholder="창고">
+                            <button class="btn btn-outline-secondary" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        </div>
+                    </div>
+                </fieldset>
+                
+                <fieldset class="row mb-4">
+                    <legend class="col-form-label col-sm-2 pt-0"><b>프로젝트</b></legend>
+                    <div class="col-sm-10">
+                        <div class="input-group">
+                            <input class="form-control" type="text" name="customerCode" placeholder="프로젝트">
+                            <button class="btn btn-outline-secondary" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        </div>
+                    </div>
+                </fieldset>
+                
+                <fieldset class="row mb-4">
+                    <legend class="col-form-label col-sm-2 pt-0"><b>거래처</b></legend>
+                    <div class="col-sm-10">
+                        <div class="input-group">
+                            <input class="form-control" type="text" name="Customers" placeholder="거래처">
+                            <button class="btn btn-outline-secondary" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        </div>
+                    </div>
+                </fieldset>
+                
+                <fieldset class="row mb-4">
+                    <legend class="col-form-label col-sm-2 pt-0"><b>품목코드</b></legend>
+                    <div class="col-sm-10">
+                        <div class="input-group">
+                            <input class="form-control" type="text" name="ItemCode" placeholder="품목코드">
+                            <button class="btn btn-outline-secondary" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        </div>
+                    </div>
+                </fieldset>
+                 <fieldset class="row mb-4">
+                    <legend class="col-form-label col-sm-2 pt-0"><b>거래구분</b></legend>
+                    <div class="col-sm-10">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="Domestic/ForeignType" value="전체">
+                            <label class="form-check-label">전체</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="Domestic/ForeignType" value="일반">
+                            <label class="form-check-label">일반</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="Domestic/ForeignType" value="반품">
+                            <label class="form-check-label">반품</label>
+                        </div>
+                    </div>
+                </fieldset>
+            
+                <fieldset class="row mb-4">
+                    <legend class="col-form-label col-sm-2 pt-0"><b>진행상태</b></legend>
+                    <div class="col-sm-10">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="quotePS_All" value="전체">
+                            <label class="form-check-label">전체</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="quotePS_e-Approval" value="미확인">
+                            <label class="form-check-label">미확인</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="quotePS_Confirmed" value="확인">
+                            <label class="form-check-label">확인</label>
+                        </div>
+                        <div class="input-group mt-2">
+                            <span class="badge text-bg-secondary me-2">확인-진행상태</span>
+                            <input class="form-control" type="text" name="Confirm-PS" placeholder="확인-진행상태">
+                            <button class="btn btn-outline-secondary" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        </div>
+                    </div>
+                </fieldset>
+                
+                      <a href="${pageContext.request.contextPath}/quoteInput" class="btn btn-success">검색</a> <!-- 신규 버튼 추가 -->
+            </form>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
+>>>>>>> branch '김지혜' of https://github.com/dltjddn0613r/Team_Project.git

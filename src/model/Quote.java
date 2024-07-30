@@ -1,97 +1,123 @@
 package model;
 
-import java.sql.Date;
+import java.util.Date;
 
 public class Quote {
-    private int quoteID;
-    private Date quoteDate;
-    private String quoteNumber; // 사용하지 않더라도 필드 유지
-    private String customerCode;
-    private String employeeCode;
-    private String productCode;
-    private Date validityPeriod;
-    private double totalAmount;
-    private String status;
-    private String createdVoucher; // 사용하지 않더라도 필드 유지
+	private Integer quote_no;
+	private String quoteID;
+	private Date quoteDate;
+	private String quoteNumber;
+	private String customerCode;
+	private String employeeCode;
+	private String productCode;
+	private Date validityPeriod;
+	private Double totalAmount;
+	private String status;
+	private String createdVoucher;
 
-    // Getters and Setters
-    public int getQuoteID() {
-        return quoteID;
-    }
+	public Quote(Integer quote_no, String quoteID, Date quoteDate, String quoteNumber, String customerCode,
+			String employeeCode, String productCode, Date validityPeriod, Double totalAmount, String status,
+			String createdVoucher) {
 
-    public void setQuoteID(int quoteID) {
-        this.quoteID = quoteID;
-    }
+		this.quote_no = quote_no;
+		this.quoteID = quoteID;
+		this.quoteDate = quoteDate;
+		this.quoteNumber = quoteNumber;
+		this.customerCode = customerCode;
+		this.employeeCode = employeeCode;
+		this.productCode = productCode;
+		this.validityPeriod = validityPeriod;
+		this.totalAmount = totalAmount;
+		this.status = status;
+		this.createdVoucher = createdVoucher;
+	}
 
-    public Date getQuoteDate() {
-        return quoteDate;
-    }
+	public Integer getQuote_no() {
+		return quote_no;
+	}
 
-    public void setQuoteDate(Date quoteDate) {
-        this.quoteDate = quoteDate;
-    }
+	public String getQuoteID() {
+		return quoteID;
+	}
 
-    public String getQuoteNumber() {
-        return quoteNumber;
-    }
+	public Date getQuoteDate() {
+		return quoteDate;
+	}
 
-    public void setQuoteNumber(String quoteNumber) {
-        this.quoteNumber = quoteNumber;
-    }
+	public String getQuoteNumber() {
+		return quoteNumber;
+	}
 
-    public String getCustomerCode() {
-        return customerCode;
-    }
+	public String getCustomerCode() {
+		return customerCode;
+	}
 
-    public void setCustomerCode(String customerCode) {
-        this.customerCode = customerCode;
-    }
+	public String getEmployeeCode() {
+		return employeeCode;
+	}
 
-    public String getEmployeeCode() {
-        return employeeCode;
-    }
+	public String getProductCode() {
+		return productCode;
+	}
 
-    public void setEmployeeCode(String employeeCode) {
-        this.employeeCode = employeeCode;
-    }
+	public Date getValidityPeriod() {
+		return validityPeriod;
+	}
 
-    public String getProductCode() {
-        return productCode;
-    }
+	public Double getTotalAmount() {
+		return totalAmount;
+	}
 
-    public void setProductCode(String productCode) {
-        this.productCode = productCode;
-    }
+	public String getStatus() {
+		return status;
+	}
 
-    public Date getValidityPeriod() {
-        return validityPeriod;
-    }
+	public String getCreatedVoucher() {
+		return createdVoucher;
+	}
 
-    public void setValidityPeriod(Date validityPeriod) {
-        this.validityPeriod = validityPeriod;
-    }
+	public void setQuote_no(Integer quote_no) {
+		this.quote_no = quote_no;
+	}
 
-    public double getTotalAmount() {
-        return totalAmount;
-    }
+	public void setQuoteID(String quoteID) {
+		this.quoteID = quoteID;
+	}
 
-    public void setTotalAmount(double totalAmount) {
-        this.totalAmount = totalAmount;
-    }
+	public void setQuoteDate(Date quoteDate) {
+		this.quoteDate = quoteDate;
+	}
 
-    public String getStatus() {
-        return status;
-    }
+	public void setQuoteNumber(String quoteNumber) {
+		this.quoteNumber = quoteNumber;
+	}
 
-    public void setStatus(String status) {
-        this.status = status;
-    }
+	public void setCustomerCode(String customerCode) {
+		this.customerCode = customerCode;
+	}
 
-    public String getCreatedVoucher() {
-        return createdVoucher;
-    }
+	public void setEmployeeCode(String employeeCode) {
+		this.employeeCode = employeeCode;
+	}
 
-    public void setCreatedVoucher(String createdVoucher) {
-        this.createdVoucher = createdVoucher;
-    }
+	public void setProductCode(String productCode) {
+		this.productCode = productCode;
+	}
+
+	public void setValidityPeriod(Date validityPeriod) {
+		this.validityPeriod = validityPeriod;
+	}
+
+	public void setTotalAmount(Double totalAmount) {
+		this.totalAmount = totalAmount;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public void setCreatedVoucher(String createdVoucher) {
+		this.createdVoucher = createdVoucher;
+	}
+	
 }
