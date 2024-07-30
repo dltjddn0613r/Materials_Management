@@ -86,7 +86,7 @@ public class ProductDao {
             rs = pstmt.executeQuery();
             List<Product> result = new ArrayList<>();
             while (rs.next()) {
-            	result.add(convertSale(rs));
+				/* result.add(convertSale(rs)); */
             }
             return result;
         } finally {

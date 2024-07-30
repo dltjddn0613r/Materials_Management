@@ -22,7 +22,7 @@ public class CustomerDao {
 				+ "values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 		pstmt.setString(1, customer.getCustomerCode());
 		pstmt.setString(2, customer.getCustomerName());
-		pstmt.setString(3, customer.getCEOName());
+		pstmt.setString(3, customer.getCeoName());
 		pstmt.setString(4, customer.getBusinessType());
 		pstmt.setString(5, customer.getIndustry());
 		pstmt.setString(6, customer.getPhone());
@@ -43,7 +43,7 @@ public class CustomerDao {
 			if(rs.next()) {
 				return new Customer(customer.getCustomerCode(), 
 									customer.getCustomerName(),
-									customer.getCEOName(),
+									customer.getCeoName(),
 									customer.getBusinessType(),
 									customer.getIndustry(),
 									customer.getPhone(),
