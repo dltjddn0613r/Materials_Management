@@ -5,9 +5,12 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 import jdbc.JdbcUtil;
 import model.Product;
+import model.Sale;
 
 public class ProductDao {
 
@@ -54,4 +57,41 @@ public class ProductDao {
 		JdbcUtil.close(pstmt);
 	}
 	}
+	
+	public int selectCount(Connection conn) throws SQLException { // Product 테이블의 전체 레코드 수 리턴
+        Statement stmt = null;
+        ResultSet rs = null;
+        try {
+            stmt = conn.createStatement();
+            rs = stmt.executeQuery("SELECT COUNT(*) FROM Product");
+            if (rs.next()) {
+                return rs.getInt(1); // 조회된 행 수 반환
+            }
+            return 0; // 행이 없으면 0 반환
+        } finally {
+            JdbcUtil.close(rs);
+            JdbcUtil.close(stmt);
+        }
+    }
+	
+	public List<Product> select(Connection conn, int firstRow, int endRow) throws SQLException {
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        try {
+          
+            pstmt = conn.prepareStatement("SELECT * FROM (SELECT rownum AS rnum, a.* FROM (SELECT * FROM Product ORDER BY SaleDate DESC) a WHERE rownum <= ?) WHERE rnum >= ?");
+            pstmt.setInt(1, endRow);
+            pstmt.setInt(2, firstRow);
+
+            rs = pstmt.executeQuery();
+            List<Product> result = new ArrayList<>();
+            while (rs.next()) {
+            	result.add(convertSale(rs));
+            }
+            return result;
+        } finally {
+            JdbcUtil.close(rs);
+            JdbcUtil.close(pstmt);
+        }
+    }
 }

@@ -21,7 +21,7 @@ public class ProductionProcessDao {
 		Statement stmt = null;
 		ResultSet rs = null;
 		try {
-			pstmt = conn.prepareStatement(//gg
+			pstmt = conn.prepareStatement(
 					"INSERT INTO ProductionProcess (ProcessCode, ProcessName, ProcessOrder) " + "VALUES (?, ?, ?)");
 			pstmt.setString(1, productionProcess.getProcessCode());
 			pstmt.setString(2, productionProcess.getProcessName());

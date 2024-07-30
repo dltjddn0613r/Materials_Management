@@ -4,101 +4,102 @@ import java.sql.Blob;
 
 public class Product {
 
-	private String ProductCode;
-	private String ProductName;
-	private String ProductGroup;
-	private Double Price;
-	private String Barcode;
-	private Double PurchasePrice;
-	private Double SellingPrice;
-	private String ProductionProcess;
-	private Blob Image;
+	private String productCode;
+	private String productName;
+	private String productGroup;
+	private Double price;
+	private String barcode;
+	private Double purchasePrice;
+	private Double sellingPrice;
+	private String productionProcess;
+	private Blob image;
 	
 	public Product(String productCode, String productName, String productGroup, Double price, String barcode,
 			Double purchasePrice, Double sellingPrice, String productionProcess, Blob image) {
 		
-		this.ProductCode = productCode;
-		this.ProductName = productName;
-		this.ProductGroup = productGroup;
-		this.Price = price;
-		this.Barcode = barcode;
-		this.PurchasePrice = purchasePrice;
-		this.SellingPrice = sellingPrice;
-		this.ProductionProcess = productionProcess;
-		this.Image = image;
+		this.productCode = productCode;
+		this.productName = productName;
+		this.productGroup = productGroup;
+		this.price = price;
+		this.barcode = barcode;
+		this.purchasePrice = purchasePrice;
+		this.sellingPrice = sellingPrice;
+		this.productionProcess = productionProcess;
+		this.image = image;
 	}
 
 	public String getProductCode() {
-		return ProductCode;
+		return productCode;
 	}
 
 	public String getProductName() {
-		return ProductName;
+		return productName;
 	}
 
 	public String getProductGroup() {
-		return ProductGroup;
+		return productGroup;
 	}
 
 	public Double getPrice() {
-		return Price;
+		return price;
 	}
 
 	public String getBarcode() {
-		return Barcode;
+		return barcode;
 	}
 
 	public Double getPurchasePrice() {
-		return PurchasePrice;
+		return purchasePrice;
 	}
 
 	public Double getSellingPrice() {
-		return SellingPrice;
+		return sellingPrice;
 	}
 
 	public String getProductionProcess() {
-		return ProductionProcess;
+		return productionProcess;
 	}
 
 	public Blob getImage() {
-		return Image;
+		return image;
 	}
 
 	public void setProductCode(String productCode) {
-		ProductCode = productCode;
+		this.productCode = productCode;
 	}
 
 	public void setProductName(String productName) {
-		ProductName = productName;
+		this.productName = productName;
 	}
 
 	public void setProductGroup(String productGroup) {
-		ProductGroup = productGroup;
+		this.productGroup = productGroup;
 	}
 
 	public void setPrice(Double price) {
-		Price = price;
+		this.price = price;
 	}
 
 	public void setBarcode(String barcode) {
-		Barcode = barcode;
+		this.barcode = barcode;
 	}
 
 	public void setPurchasePrice(Double purchasePrice) {
-		PurchasePrice = purchasePrice;
+		this.purchasePrice = purchasePrice;
 	}
 
 	public void setSellingPrice(Double sellingPrice) {
-		SellingPrice = sellingPrice;
+		this.sellingPrice = sellingPrice;
 	}
 
 	public void setProductionProcess(String productionProcess) {
-		ProductionProcess = productionProcess;
+		this.productionProcess = productionProcess;
 	}
 
 	public void setImage(Blob image) {
-		Image = image;
+		this.image = image;
 	}
+	
 	
 	
 }

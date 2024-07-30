@@ -2,30 +2,31 @@ package model;
 
 public class PaymentStatus {
 
-	private String StatusID;
-	private String StatusDescription;
+	private String statusID;
+	private String statusDescription;
 	
 	public PaymentStatus(String statusID, String statusDescription) {
 		
-		StatusID = statusID;
-		StatusDescription = statusDescription;
+		this.statusID = statusID;
+		this.statusDescription = statusDescription;
 	}
 
 	public String getStatusID() {
-		return StatusID;
+		return statusID;
 	}
 
 	public String getStatusDescription() {
-		return StatusDescription;
+		return statusDescription;
 	}
 
 	public void setStatusID(String statusID) {
-		StatusID = statusID;
+		this.statusID = statusID;
 	}
 
 	public void setStatusDescription(String statusDescription) {
-		StatusDescription = statusDescription;
+		this.statusDescription = statusDescription;
 	}
+	
 	
 	
 }

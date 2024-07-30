@@ -4,60 +4,61 @@ import java.util.Date;
 
 public class ShippingInstruction {
 
-	private String InstructionID;
-	private Date InstructionDate;
-	private String ProductCode;
-	private Integer Quantity;
-	private String Status;
+	private String instructionID;
+	private Date instructionDate;
+	private String productCode;
+	private Integer quantity;
+	private String status;
 	
 	public ShippingInstruction(String instructionID, Date instructionDate, String productCode, Integer quantity,
 			String status) {
 		
-		this.InstructionID = instructionID;
-		this.InstructionDate = instructionDate;
-		this.ProductCode = productCode;
-		this.Quantity = quantity;
-		this.Status = status;
+		this.instructionID = instructionID;
+		this.instructionDate = instructionDate;
+		this.productCode = productCode;
+		this.quantity = quantity;
+		this.status = status;
 	}
 
 	public String getInstructionID() {
-		return InstructionID;
+		return instructionID;
 	}
 
 	public Date getInstructionDate() {
-		return InstructionDate;
+		return instructionDate;
 	}
 
 	public String getProductCode() {
-		return ProductCode;
+		return productCode;
 	}
 
 	public Integer getQuantity() {
-		return Quantity;
+		return quantity;
 	}
 
 	public String getStatus() {
-		return Status;
+		return status;
 	}
 
 	public void setInstructionID(String instructionID) {
-		InstructionID = instructionID;
+		this.instructionID = instructionID;
 	}
 
 	public void setInstructionDate(Date instructionDate) {
-		InstructionDate = instructionDate;
+		this.instructionDate = instructionDate;
 	}
 
 	public void setProductCode(String productCode) {
-		ProductCode = productCode;
+		this.productCode = productCode;
 	}
 
 	public void setQuantity(Integer quantity) {
-		Quantity = quantity;
+		this.quantity = quantity;
 	}
 
 	public void setStatus(String status) {
-		Status = status;
+		this.status = status;
 	}
+	
 	
 }

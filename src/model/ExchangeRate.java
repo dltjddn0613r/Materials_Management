@@ -2,40 +2,41 @@ package model;
 
 public class ExchangeRate {
 
-	private String ExchangeRateCode;
-	private String ExchangeRateName;
-	private Double ExchangeRate;
+	private String exchangeRateCode;
+	private String exchangeRateName;
+	private Double exchangeRate;
 	
 	public ExchangeRate(String exchangeRateCode, String exchangeRateName, Double exchangeRate) {
 		
-		this.ExchangeRateCode = exchangeRateCode;
-		this.ExchangeRateName = exchangeRateName;
-		this.ExchangeRate = exchangeRate;
+		this.exchangeRateCode = exchangeRateCode;
+		this.exchangeRateName = exchangeRateName;
+		this.exchangeRate = exchangeRate;
 	}
 
 	public String getExchangeRateCode() {
-		return ExchangeRateCode;
+		return exchangeRateCode;
 	}
 
 	public String getExchangeRateName() {
-		return ExchangeRateName;
+		return exchangeRateName;
 	}
 
 	public Double getExchangeRate() {
-		return ExchangeRate;
+		return exchangeRate;
 	}
 
 	public void setExchangeRateCode(String exchangeRateCode) {
-		ExchangeRateCode = exchangeRateCode;
+		this.exchangeRateCode = exchangeRateCode;
 	}
 
 	public void setExchangeRateName(String exchangeRateName) {
-		ExchangeRateName = exchangeRateName;
+		this.exchangeRateName = exchangeRateName;
 	}
 
 	public void setExchangeRate(Double exchangeRate) {
-		ExchangeRate = exchangeRate;
+		this.exchangeRate = exchangeRate;
 	}
+	
 	
 	
 }
