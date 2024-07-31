@@ -38,7 +38,6 @@ public class SaleDao {
             	stmt = conn.createStatement();
                 rs = stmt.executeQuery("SELECT SaleID FROM (SELECT SaleID FROM Sale ORDER BY SaleID DESC) WHERE ROWNUM = 1;");
                 if(rs.next()) {
-                	Integer newNo = rs.getInt(1);
                 	return new Sale(sale.getSaleID(),sale.getSaleDate(),sale.getProductCode(),sale.getQuantity(),sale.getTotalAmount(),sale.getPaymentStatusID());
                 } 
             }
