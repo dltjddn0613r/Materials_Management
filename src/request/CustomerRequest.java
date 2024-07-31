@@ -1,6 +1,6 @@
 package request;
 
-public class customerRequest {
+public class CustomerRequest {
 
 	private String customerCode;
 	private String customerName;

@@ -1,6 +1,6 @@
 package request;
 
-public class exchageRateRequest {
+public class ExchageRateRequest {
 
 		private String exchangeRateCode;
 		private String exchangeRateName;

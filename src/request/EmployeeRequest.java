@@ -1,6 +1,6 @@
 package request;
 
-public class employeeRequest {
+public class EmployeeRequest {
 
 	private String employeeCode;
 	private String employeeName;
