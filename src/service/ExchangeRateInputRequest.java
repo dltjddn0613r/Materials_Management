@@ -1,18 +1,31 @@
-package model;
+package service;
 
-public class ExchangeRate {
+import java.util.Map;
+
+public class ExchangeRateInputRequest {
 
 	private String exchangeRateCode;
 	private String exchangeRateName;
 	private Double exchangeRate;
 	
-	//생성자
-	public ExchangeRate(String exchangeRateCode, String exchangeRateName, Double exchangeRate) {
+	public ExchangeRateInputRequest(String exchangeRateCode, String exchangeRateName, Double exchangeRate) {
 		
 		this.exchangeRateCode = exchangeRateCode;
 		this.exchangeRateName = exchangeRateName;
 		this.exchangeRate = exchangeRate;
 	}
+	
+	public void validate(Map<String, Boolean> errors) {
+        checkEmpty(errors, exchangeRateCode, "exchangeRateCode");
+        checkEmpty(errors, exchangeRateName, "exchangeRateName");
+        // 필요한 다른 필드들에 대한 검증 추가
+    }
+
+    private void checkEmpty(Map<String, Boolean> errors, String value, String fieldName) {
+        if (value == null || value.isEmpty()) {
+            errors.put(fieldName, Boolean.TRUE);
+        }
+    }
 
 	public String getExchangeRateCode() {
 		return exchangeRateCode;

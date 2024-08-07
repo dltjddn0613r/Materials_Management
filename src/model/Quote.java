@@ -3,116 +3,144 @@ package model;
 import java.util.Date;
 
 public class Quote {
-   private Integer quote_no;
-   private String QuoteID;
-   private Date QuoteDate;
-   private String QuoteNumber;
-   private String CustomerCode;
-   private String EmployeeCode;
-   private String ProductCode;
-   private Date ValidityPeriod;
-   private Double TotalAmount;
-   private String Status;
-   private String CreatedVoucher;
+	private Integer quote_no;
+	private Date quoteDate; // 견적서 날짜
+	private String customerCode; // 거래처 코드
+	private String employeeCode; // 담당자 코드
+	private String productCode; // 품목 코드
+	private Date validityPeriod; // 유효 기간
+	private double totalAmount; // 견적 금액 합계
+	private String status; // 진행 상태
+	private String createdVoucher; // 생성한 전표
 
-   public Quote(Integer quote_no, String quoteID, Date quoteDate, String quoteNumber, String customerCode,
-         String employeeCode, String productCode, Date validityPeriod, Double totalAmount, String status,
-         String createdVoucher) {
-      this.quote_no = quote_no;
-      this.QuoteID = quoteID;
-      this.QuoteDate = quoteDate;
-      this.QuoteNumber = quoteNumber;
-      this.CustomerCode = customerCode;
-      this.EmployeeCode = employeeCode;
-      this.ProductCode = productCode;
-      this.ValidityPeriod = validityPeriod;
-      this.TotalAmount = totalAmount;
-      this.Status = status;
-      this.CreatedVoucher = createdVoucher;
-   }
+	// 새로 추가된 필드
+	private String warehouseCode; // 출하 창고 코드
+	private String transactionTypeCode; // 거래 유형 코드
+	private String exchangeRateCode; // 통화 코드
+	private String projectCode; // 프로젝트 코드
 
-   public Integer getQuote_no() {
-      return quote_no;
-   }
+	public Quote(Integer quote_no, Date quoteDate, String customerCode, String employeeCode, String productCode,
+			Date validityPeriod, double totalAmount, String status, String createdVoucher, String warehouseCode,
+			String transactionTypeCode, String exchangeRateCode, String projectCode) {
 
-   public String getQuoteID() {
-      return QuoteID;
-   }
+		this.quote_no = quote_no;
+		this.quoteDate = quoteDate;
+		this.customerCode = customerCode;
+		this.employeeCode = employeeCode;
+		this.productCode = productCode;
+		this.validityPeriod = validityPeriod;
+		this.totalAmount = totalAmount;
+		this.status = status;
+		this.createdVoucher = createdVoucher;
+		this.warehouseCode = warehouseCode;
+		this.transactionTypeCode = transactionTypeCode;
+		this.exchangeRateCode = exchangeRateCode;
+		this.projectCode = projectCode;
+	}
 
-   public Date getQuoteDate() {
-      return QuoteDate;
-   }
+	public Integer getQuote_no() {
+		return quote_no;
+	}
 
-   public String getQuoteNumber() {
-      return QuoteNumber;
-   }
+	public void setQuote_no(Integer quote_no) {
+		this.quote_no = quote_no;
+	}
 
-   public String getCustomerCode() {
-      return CustomerCode;
-   }
+	public Date getQuoteDate() {
+		return quoteDate;
+	}
 
-   public String getEmployeeCode() {
-      return EmployeeCode;
-   }
+	public void setQuoteDate(Date quoteDate) {
+		this.quoteDate = quoteDate;
+	}
 
-   public String getProductCode() {
-      return ProductCode;
-   }
+	public String getCustomerCode() {
+		return customerCode;
+	}
 
-   public Date getValidityPeriod() {
-      return ValidityPeriod;
-   }
+	public void setCustomerCode(String customerCode) {
+		this.customerCode = customerCode;
+	}
 
-   public Double getTotalAmount() {
-      return TotalAmount;
-   }
+	public String getEmployeeCode() {
+		return employeeCode;
+	}
 
-   public String getStatus() {
-      return Status;
-   }
+	public void setEmployeeCode(String employeeCode) {
+		this.employeeCode = employeeCode;
+	}
 
-   public String getCreatedVoucher() {
-      return CreatedVoucher;
-   }
+	public String getProductCode() {
+		return productCode;
+	}
 
-   public void setQuoteID(String quoteID) {
-      QuoteID = quoteID;
-   }
+	public void setProductCode(String productCode) {
+		this.productCode = productCode;
+	}
 
-   public void setQuoteDate(Date quoteDate) {
-      QuoteDate = quoteDate;
-   }
+	public Date getValidityPeriod() {
+		return validityPeriod;
+	}
 
-   public void setQuoteNumber(String quoteNumber) {
-      QuoteNumber = quoteNumber;
-   }
+	public void setValidityPeriod(Date validityPeriod) {
+		this.validityPeriod = validityPeriod;
+	}
 
-   public void setCustomerCode(String customerCode) {
-      CustomerCode = customerCode;
-   }
+	public double getTotalAmount() {
+		return totalAmount;
+	}
 
-   public void setEmployeeCode(String employeeCode) {
-      EmployeeCode = employeeCode;
-   }
+	public void setTotalAmount(double totalAmount) {
+		this.totalAmount = totalAmount;
+	}
 
-   public void setProductCode(String productCode) {
-      ProductCode = productCode;
-   }
+	public String getStatus() {
+		return status;
+	}
 
-   public void setValidityPeriod(Date validityPeriod) {
-      ValidityPeriod = validityPeriod;
-   }
+	public void setStatus(String status) {
+		this.status = status;
+	}
 
-   public void setTotalAmount(Double totalAmount) {
-      TotalAmount = totalAmount;
-   }
+	public String getCreatedVoucher() {
+		return createdVoucher;
+	}
 
-   public void setStatus(String status) {
-      Status = status;
-   }
+	public void setCreatedVoucher(String createdVoucher) {
+		this.createdVoucher = createdVoucher;
+	}
 
-   public void setCreatedVoucher(String createdVoucher) {
-      CreatedVoucher = createdVoucher;
-   }
+	public String getWarehouseCode() {
+		return warehouseCode;
+	}
 
+	public void setWarehouseCode(String warehouseCode) {
+		this.warehouseCode = warehouseCode;
+	}
+
+	public String getTransactionTypeCode() {
+		return transactionTypeCode;
+	}
+
+	public void setTransactionTypeCode(String transactionTypeCode) {
+		this.transactionTypeCode = transactionTypeCode;
+	}
+
+	public String getExchangeRateCode() {
+		return exchangeRateCode;
+	}
+
+	public void setExchangeRateCode(String exchangeRateCode) {
+		this.exchangeRateCode = exchangeRateCode;
+	}
+
+	public String getProjectCode() {
+		return projectCode;
+	}
+
+	public void setProjectCode(String projectCode) {
+		this.projectCode = projectCode;
+	}
+
+	
 }

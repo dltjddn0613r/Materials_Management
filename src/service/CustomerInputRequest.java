@@ -1,26 +1,28 @@
-package model;
+package service;
 
-public class Customer {
-    private String customerCode; // 거래처 코드
-    private String customerName; // 거래처 명
-    private String ceoName;      // 대표자 명
-    private String businessType; // 업태
-    private String industry;     // 종목
-    private String phone;        // 전화번호
-    private String fax;          // 팩스번호
-    private String searchContent;// 검색내용
-    private String mobile;       // 휴대전화
-    private String postalCode;   // 우편번호
-    private String address1;     // 주소
-    private String website;      // 홈페이지
-    private String responsibleEmployee; // 담당자
-    private String email;        // 이메일
+import java.util.Map;
 
-    // 생성자
-    public Customer(String customerCode, String customerName, String ceoName, String businessType, 
-                    String industry, String phone, String fax, String searchContent, 
-                    String mobile, String postalCode, String address1, String website, 
-                    String responsibleEmployee, String email) {
+public class CustomerInputRequest {
+    private String customerCode;
+    private String customerName;
+    private String ceoName;
+    private String businessType;
+    private String industry;
+    private String phone;
+    private String fax;
+    private String searchContent;
+    private String mobile;
+    private String postalCode;
+    private String address1;
+    private String website;
+    private String responsibleEmployee;
+    private String email;
+
+    public CustomerInputRequest(String customerCode, String customerName, String ceoName,
+                                String businessType, String industry, String phone, String fax,
+                                String searchContent, String mobile, String postalCode,
+                                String address1, String website, String responsibleEmployee,
+                                String email) {
         this.customerCode = customerCode;
         this.customerName = customerName;
         this.ceoName = ceoName;
@@ -37,7 +39,19 @@ public class Customer {
         this.email = email;
     }
 
-    // Getter와 Setter 메서드
+    public void validate(Map<String, Boolean> errors) {
+        checkEmpty(errors, customerCode, "customerCode");
+        checkEmpty(errors, customerName, "customerName");
+        // 필요한 다른 필드들에 대한 검증 추가
+    }
+
+    private void checkEmpty(Map<String, Boolean> errors, String value, String fieldName) {
+        if (value == null || value.isEmpty()) {
+            errors.put(fieldName, Boolean.TRUE);
+        }
+    }
+
+    // Getter 및 Setter 메서드
     public String getCustomerCode() {
         return customerCode;
     }
